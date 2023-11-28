@@ -30,6 +30,8 @@ Rails.application.routes.draw do
 
   resources :user_categories
 
+  resources :profile, only: [:show], controller: "profile"
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
