@@ -1,5 +1,17 @@
 <h1>Choisissez votre accord</h1>
 <h2>Quel produit avez-vous ?</h2>
 <%# menu déroulant %>
+<% @categories.each do |category| %>
+<%= category.name %>
+  <% category.categorie_drinks.each do |categorie_drink| %>
+  <%= categorie_drink.name %>
+  <% end %>
+<% end %>
 <h2>Avec quel produit voulez-vous l'associer ?</h2>
 <%# menu déroulant %>
+<% @categories.each do |category| %>
+<%= category.name %>
+  <% category.categorie_drinks.each do |categorie_drink| %>
+  <%= categorie_drink.name %>
+  <% end %>
+<% end %>
