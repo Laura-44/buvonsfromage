@@ -1,0 +1,12 @@
+<h1>Nos propositions de categories :</h1>
+<% @categories.each do |category| %>
+      <ul>
+        <li><%= category.food.name %></li>
+        <li><%= category.drink.name %></li>
+      </ul>
+    <% end %>
+
+
+ <%# avec index on itère sur tous les categoryes dans la seed et ensuite on recharge la page et on change d'url %>
+ <%# .where pour récpérer la clé qui repre, caegory %>
+ <%# séparer  %>
