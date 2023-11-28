@@ -11,13 +11,13 @@ require "open-uri"
 
 # USERS
 
-Food.destroy_all
-Match.destroy_all
+CategorieDrink.destroy_all
 Pairing.destroy_all
+Match.destroy_all
+Food.destroy_all
 User.destroy_all
 Drink.destroy_all
 Category.destroy_all
-CategorieDrink.destroy_all
 
 puts "user"
 
