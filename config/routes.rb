@@ -6,10 +6,29 @@ Rails.application.routes.draw do
   root to: "pages#home"
   devise_for :users
 
-  resources :foods
-  resources :drinks
-  resources :categories
+  resources :foods do
+    resources :pairings
+    resources :matches
+  end
+
+  resources :drinks do
+    resources :pairings
+    resources :matches
+    # resources :categorie_drinks
+  end
+
+  resources :categories do
+    resources :categorie_drinks
+    resources :foods
+    # resources :user_categories
+  end
+
   resources :pairings
+  resources :matches
+
+  resources :categorie_drinks
+
+  resources :user_categories
 
   # Defines the root path route ("/")
   # root "posts#index"
