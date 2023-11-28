@@ -15,3 +15,47 @@
   <%= categorie_drink.name %>
   <% end %>
 <% end %>
+
+<%= form_tag root_path, method: :get, id: 'category-form' do %>
+  <div class="field">
+    <%= label_tag :category_id, 'Catégorie' %>
+    <%= select_tag :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, @selected_category_id), prompt: 'Sélectionnez une catégorie', id: 'category-select' %>
+  </div>
+
+  <div class="field" id="sub-category-field" style="display: none;">
+    <%= label_tag :sub_category_id, 'Sous-catégorie' %>
+    <%= select_tag :sub_category_id, options_for_select(@categories.map { |c| [c.name, c.id, c.categorie_drinks.map { |cd| [cd.name, cd.id] }] }), prompt: 'Sélectionnez une sous-catégorie', id: 'sub-category-select' %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag 'Afficher Sous-catégorie' %>
+  </div>
+<% end %>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var categorySelect = document.getElementById('category-select');
+    var subCategoryField = document.getElementById('sub-category-field');
+    var subCategorySelect = document.getElementById('sub-category-select');
+
+    categorySelect.addEventListener('change', function() {
+      var categoryId = categorySelect.value;
+      if (categoryId !== '') {
+        fetch('/categoris?category_id=' + categoryId)
+          .then(response => response.json())
+          .then(data => {
+            subCategorySelect.innerHTML = '<option value="">Sélectionnez une sous-catégorie</option>';
+            data.forEach(subCategory => {
+              var option = document.createElement('option');
+              option.value = subCategory.id;
+              option.text = subCategory.name;
+              subCategorySelect.add(option);
+            });
+            subCategoryField.style.display = 'block';
+          })
+      } else {
+        subCategoryField.style.display = 'none';
+      }
+    });
+  });
+</script>
