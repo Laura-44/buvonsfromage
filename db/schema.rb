@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_27_162229) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_28_120007) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,6 +62,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_162229) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "strength"
+    t.string "fermentation"
+    t.string "color"
+    t.integer "ibu"
+    t.string "flavor"
+    t.string "productor"
+    t.string "grape"
+    t.string "origin"
+    t.string "aging"
   end
 
   create_table "foods", force: :cascade do |t|
@@ -70,6 +79,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_162229) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "strength"
+    t.string "milk"
+    t.string "aging"
+    t.string "origin"
+    t.string "family"
     t.index ["category_id"], name: "index_foods_on_category_id"
   end
 
