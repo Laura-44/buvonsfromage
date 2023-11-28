@@ -19,11 +19,12 @@ class CategoriesController < ApplicationController
 # un utilisateur peut voir une sélection de produits qui Categoryent
 # photos, description
 
-  # private
+  private
 
-  # def categories_params
-  #   params.require(:categories).permit(:name, :category_id, photos: [])
-  # end
+  def categories_params
+    params.require(:categories).permit(:name, :category_id, photos: [])
+  end
 
 # SELECT category WHERE  categorie.name INCLUDE beer AND wine
+
 end
