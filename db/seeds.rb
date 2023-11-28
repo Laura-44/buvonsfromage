@@ -8,14 +8,19 @@ require "open-uri"
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+Pairing.destroy_all
+Match.destroy_all
+Food.destroy_all
+Category.destroy_all
+CategorieDrink.destroy_all
+Drink.destroy_all
+User.destroy_all
 # USERS
 puts "user"
 
 user1 = User.create!(name: "Marion", email: "marion@email.com", password: "123456")
 user2 = User.create!(name: "Rémy", email: "rémy@email.com", password: "456789")
 user3 = User.create!(name: "Laura", email: "laura@email.com", password: "654321")
-
 
 # DRINKS
 puts "beer"
@@ -36,6 +41,11 @@ category1 = Category.create!(name: "Beer")
 category2 = Category.create!(name: "Wine")
 category3 = Category.create!(name: "Cheese")
 puts "categories"
+
+# CATEGORIE-DRINKS
+categorie_drink1 = CategorieDrink.create!(name: "Blonde", category_id: category1.id, drink_id: beer1.id)
+categorie_drink2 = CategorieDrink.create!(name: "Brune/Noire", category_id: category1.id, drink_id: beer2.id)
+categorie_drink3 = CategorieDrink.create!(name: "Ambrée", category_id: category1.id, drink_id: beer4.id)
 
 # FOODS
 puts "cheese"
@@ -63,7 +73,3 @@ pairing2 = Pairing.create!(food_id: cheese4.id, drink_id: beer4.id, user_id: use
 
 # USER-CATEGORIES
 # puts "user-categories"
-
-
-# CATEGORIE-DRINKS
-# puts "categorie-drinks"
