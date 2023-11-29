@@ -1,35 +1,20 @@
 <h1>Choisissez votre accord</h1>
 <h2>Quel produit avez-vous ?</h2>
-<%# menu déroulant %>
-<% @categories.each do |category| %>
-<%= category.name %>
-  <% category.categorie_drinks.each do |categorie_drink| %>
-  <%= categorie_drink.name %>
-  <% end %>
-<% end %>
-<h2>Avec quel produit voulez-vous l'associer ?</h2>
-<%# menu déroulant %>
-<% @categories.each do |category| %>
-<%= category.name %>
-  <% category.categorie_drinks.each do |categorie_drink| %>
-  <%= categorie_drink.name %>
-  <% end %>
-<% end %>
 
 <div data-controller="dropdown">
-  <%= form_tag root_path, method: :get, id: 'category-form' do %>
+  <%= form_tag categories_path, method: :get, id: 'category-form' do %>
     <div class="field">
       <%= label_tag :category_id, 'Catégorie' %>
-      <%= select_tag :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, @selected_category_id), prompt: 'Sélectionnez une catégorie', id: 'category-select', data: { dropdowm_target: "category-select" }  %>
+      <%= select_tag :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, @selected_category_id), prompt: 'Sélectionnez une catégorie', id: 'category-select', data: { action: "change->dropdown#display", dropdown_target: "categorySelect" } %>
     </div>
 
-    <div class="field" id="sub-category-field" style="display: none;" data-dropdown-target="sub-category-field">
-      <%= label_tag :sub_category_id, 'Sous-catégorie' %>
-      <%= select_tag :sub_category_id, options_for_select(@categories.map { |c| [c.name, c.id, c.categorie_drinks.map { |cd| [cd.name, cd.id] }] }), prompt: 'Sélectionnez une sous-catégorie', id: 'sub-category-select', data: { dropdowm_target: "sub-category-select" } %>
+    <div class="field" id="sub-category-field" style="display: none;" data-dropdown-target="subCategoryField">
+      <%= label_tag :categorie_drink_id, 'Sous-catégorie' %>
+      <%= select_tag :categorie_drink_id, options_for_select(@categorie_drinks.map { |s| [s.name, s.id] }), prompt: 'Sélectionnez une sous-catégorie', id: 'sub-category-select', data: { dropdown_target: "subCategorySelect"} %>
     </div>
 
-    <div class="actions" data-action="input->dropdown#display">
-      <%= submit_tag 'Afficher Sous-catégorie' %>
+    <div class="actions">
+      <%= submit_tag 'Valider' %>
     </div>
   <% end %>
 </div>
