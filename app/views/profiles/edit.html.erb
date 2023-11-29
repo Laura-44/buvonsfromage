@@ -1,0 +1,40 @@
+<h1>Profil utilisateur</h1>
+
+<p>Nom</p>
+<%= current_user.name %>
+<p>Boissons à écarter</p>
+<div>
+<div class="button">
+  <%= submit_tag 'Bière' %>
+</div>
+<%= link_to 'Blanche', user_categories_path(category: "Bière", name: "blanche"), data: {turbo_method: :post} %>
+<%= link_to 'Blonde', user_categories_path, data: {turbo_method: :post}   %>
+<%= link_to 'Ambrée', user_categories_path, data: {turbo_method: :post}   %>
+<%= link_to 'Brune', user_categories_path, data: {turbo_method: :post}  %>
+<%= link_to 'Noire', user_categories_path, data: {turbo_method: :post}  %>
+<%= link_to 'Fruits', user_categories_path, data: {turbo_method: :post}  %>
+</div>
+
+<div>
+<div class="button">
+  <%= submit_tag 'Vin' %>
+</div>
+<%= link_to 'Blanc', user_categories_path, data: {turbo_method: :post}   %>
+<%= link_to 'Rosé', user_categories_path, data: {turbo_method: :post}  %>
+<%= link_to 'Rouge', user_categories_path, data: {turbo_method: :post}  %>
+</div>
+
+<p>Aliments à écarter</p>
+<div>
+<div class="button">
+  <%= submit_tag 'Fromage' %>
+</div>
+<%= link_to 'Vache', user_categories_path, data: {turbo_method: :post} %>
+<%= link_to 'Chèvre', user_categories_path, data: {turbo_method: :post}  %>
+<%= link_to 'Brebis', user_categories_path, data: {turbo_method: :post}  %>
+<%= link_to 'Bufflone', user_categories_path, data: {turbo_method: :post}  %>
+</div>
+
+<div class="button">
+  <%= submit_tag 'VALIDER' %>
+</div>
