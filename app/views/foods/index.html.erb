@@ -1,5 +1,4 @@
 <h1>Choisissez votre accord</h1>
-<h2>Quel produit avez-vous ?</h2>
 
 <div data-controller="dropdown">
   <%= form_tag categories_path, method: :get, id: 'category-form' do %>
@@ -14,6 +13,7 @@
     </div>
 
 <%# 2E PRODUIT A SELECTIONNER %>
+<h2>Quel produit avez-vous ?</h2>
     <div class="field">
       <%= label_tag :second_category_id, 'Catégorie' %>
       <%= select_tag :second_category_id, options_for_select(@second_categories.map { |c| [c.name, c.id] }, @selected_second_category_id), prompt: 'Sélectionnez une catégorie', id: 'second-category-select', data: { action: "change->dropdown#secondDisplay", dropdown_target: "secondCategorySelect" } %>

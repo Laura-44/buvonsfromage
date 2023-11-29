@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   resources :user_categories
 
-  resource :profiles, only: [:show], controller: "profiles"
+  resource :profiles, only: [:show, :edit, :update], controller: "profiles"
 
 
   # Defines the root path route ("/")
