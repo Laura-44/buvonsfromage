@@ -1,13 +1,15 @@
-<h1>Nos propositions de categories :</h1>
-<% @categories.each do |category| %>
-      <ul>
-        <li><%= @categories = Category.where(name: ["beer", "wine", "cheese"]) %></li>
-        <%# <li><%= category.food.name</li> %>
-        <%# <li><%= category.drink.name</li> %>
-      </ul>
-    <% end %>
+<h1>Nos suggestions d'accord</h1>
 
+<% @choices.each do |choice| %>
+<%= choice.name %>
+<%= form_tag({:action => 'valider'}, {:multipart => true}) %>
+    <%= file_field_tag :submit_tag%>
+  <%= end_form_tag %>
+<%# <%= select_tag :category_id %>
+<% end %>
 
- <%# avec index on itère sur toutes les categories dans la seed et ensuite on recharge la page et on change d'url %>
- <%# .where pour récpérer la clé qui reprend category %>
- <%# séparer  %>
+<%# <%= link_to "je valide", categories_path do %>
+<%# <% end %>
+
+<%# <%= link_to "X", categories_path do %>
+<%# <% end %>
