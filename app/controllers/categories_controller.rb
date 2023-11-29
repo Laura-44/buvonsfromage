@@ -1,11 +1,30 @@
 class CategoriesController < ApplicationController
 
-  def index
-    @categories = Category.all
-    # redirect_to categories_path
-  end
+
 
   # je veux :
+
+  def index
+    @category = Category.find(4)
+    if @category.name == "Cheese"
+      @choices = Category.find_by(name: "Beer").drinks
+      # @choices = Category.find_by(name: "Wine").drinks
+    else
+      @choices = Category.find_by(name: "Cheese").foods
+    end
+
+
+
+
+
+
+    # @choices.shuffle! if @choices.present?
+    # if @category.nil?
+    # end
+
+  end
+
+  # category_drinks = CategorieDrink.where(category = Category.where(name: "beer"))
     # récupérer une image correspondant au choix de catégorie de l'utiilisateur (qui se trouve dans food_controller : "quel produit avez-vous ?")
     # récupérer une image de la seed correspondant au choix de catégorie de l'utilisateur (dans food_controller : "avec quel produit voulez-vous l'associer ?")
 
