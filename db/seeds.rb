@@ -37,7 +37,7 @@ beer5 = Drink.create!(name: "Hoppy lager", description: "Bière généreusement 
 
 puts "wine"
 
-# wine1 = Drink.create!(name: "Light", description: "Bière très rafraîchissante et désaltérante. Peu d'arômes, flaveurs courtes et faiblement sucrées.", strength: 4, fermentation: "Lager", color: "Blonde", flavor: "Maltée, céréale")
+wine1 = Drink.create!(name: "Light", description: "Bière très rafraîchissante et désaltérante. Peu d'arômes, flaveurs courtes et faiblement sucrées.", strength: 4, fermentation: "Lager", color: "Blonde", flavor: "Maltée, céréale")
 
 # CATEGORIES
 category1 = Category.create!(name: "Beer")

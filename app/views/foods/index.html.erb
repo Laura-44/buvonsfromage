@@ -8,9 +8,20 @@
       <%= select_tag :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, @selected_category_id), prompt: 'Sélectionnez une catégorie', id: 'category-select', data: { action: "change->dropdown#display", dropdown_target: "categorySelect" } %>
     </div>
 
-    <div class="field" id="sub-category-field" style="display: none;" data-dropdown-target="subCategoryField">
-      <%= label_tag :categorie_drink_id, 'Sous-catégorie' %>
-      <%= select_tag :categorie_drink_id, options_for_select(@categorie_drinks.map { |s| [s.name, s.id] }), prompt: 'Sélectionnez une sous-catégorie', id: 'sub-category-select', data: { dropdown_target: "subCategorySelect"} %>
+    <div class="field" id="sub-category-field" style="display: none" data-dropdown-target="subCategoryField">
+      <%= label_tag :subcategory_id, 'Sous-catégorie' %>
+      <%= select_tag :subcategory_id, options_for_select(@categorie_drinks.map { |s| [s.name, s.id] }), prompt: 'Sélectionnez une sous-catégorie', id: 'sub-category-select', data: { dropdown_target: "subCategorySelect"} %>
+    </div>
+
+<%# 2E PRODUIT A SELECTIONNER %>
+    <div class="field">
+      <%= label_tag :second_category_id, 'Catégorie' %>
+      <%= select_tag :second_category_id, options_for_select(@second_categories.map { |c| [c.name, c.id] }, @selected_second_category_id), prompt: 'Sélectionnez une catégorie', id: 'second-category-select', data: { action: "change->dropdown#secondDisplay", dropdown_target: "secondCategorySelect" } %>
+    </div>
+
+    <div class="field" id="second-sub-category-field" style="display: none" data-dropdown-target="secondSubCategoryField">
+      <%= label_tag :second_subcategory_id, 'Sous-catégorie' %>
+      <%= select_tag :second_subcategory_id, options_for_select(@second_categorie_drinks.map { |s| [s.name, s.id] }), prompt: 'Sélectionnez une sous-catégorie', id: 'second-sub-category-select', data: { dropdown_target: "secondSubCategorySelect"} %>
     </div>
 
     <div class="actions">
