@@ -1,17 +1,81 @@
+#edit-profiles {
+  background-color: $blue;
+  height: 100dvh;
+  width: 100%;
+  padding: 70px 25px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.edit-title {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.title-line {
+  border-bottom: 1px solid white;
+  margin-bottom: 17px;
+  width: 120%;
+  position: relative;
+
+    .title-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: white;
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+  }
+}
+
+.button {
+  font-size: 16px;
+    margin-bottom: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: white;
+}
+
+.index-subtitle {
+  font-size: 16px;
+  margin-bottom: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: white;
+}
+
+.option-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 34px;
+}
+
 .beer a,
 .wine a,
 .cheese a {
   text-decoration: none;
   background: #ffffff;
   border-radius: 10px;
-  border: 1px solid #ffffff;
-  padding: 15px 20px 8px 20px;
+  padding: 10px;
   text-align: center;
   font-family: Poppins;
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  width: 100%;
 }
 #blanche{
   color: $yellow-blanche;
@@ -91,4 +155,20 @@
 #rouge.active {
   background-color: $red-rouge;
   color: white
+}
+
+.search-btn {
+  background-color: #ffffff;
+  width: 100%;
+  justify-content: center;
+  height: 62px;
+  padding: 15px 16px;
+  border-radius: 46px;
+  color: $blue;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  border: none;
 }
