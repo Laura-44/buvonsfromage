@@ -19,4 +19,8 @@ class FoodsController < ApplicationController
       # redirect_to categories_path
     end
   end
+
+  def show
+    @food = Food.find(params[:id])
+  end
 end
