@@ -11,19 +11,19 @@ require "open-uri"
 
 # USERS
 
-CategorieDrink.destroy_all
 Pairing.destroy_all
 Match.destroy_all
 Food.destroy_all
-User.destroy_all
+CategorieDrink.destroy_all
 Drink.destroy_all
 Category.destroy_all
+User.destroy_all
 
 puts "user"
 
 user1 = User.create!(name: "Marion", email: "marion@email.com", password: "123456")
-user2 = User.create!(name: "Rémy", email: "rémy@email.com", password: "456789")
-user3 = User.create!(name: "Laura", email: "laura@email.com", password: "654321")
+user2 = User.create!(name: "Rémy", email: "rémy@email.com", password: "123456")
+user3 = User.create!(name: "Laura", email: "laura@email.com", password: "123456")
 
 # DRINKS
 puts "beer"

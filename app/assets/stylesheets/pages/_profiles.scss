@@ -1,0 +1,94 @@
+.beer a,
+.wine a,
+.cheese a {
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  padding: 15px 20px 8px 20px;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+#blanche{
+  color: $yellow-blanche;
+}
+#blanche.active {
+  background-color: $yellow-blanche;
+  color: white
+}
+
+#blonde {
+  color: $yellow-blonde;
+}
+#blonde.active {
+  background-color: $yellow-blonde;
+  color: white
+}
+
+#ambrée {
+  color: $orange-ambree;
+}
+#ambrée.active {
+  background-color: $orange-ambree;
+  color: white
+}
+
+#brune {
+  color: $brown-brune;
+}
+#brune.active {
+  background-color: $brown-brune;
+  color: white
+}
+
+#noire {
+  color: $black-noire;
+}
+#noire.active {
+  background-color: $black-noire;
+  color: white
+}
+
+#noire {
+  color: $black-noire;
+}
+#noire.active {
+  background-color: $black-noire;
+  color: white
+}
+
+#fruits {
+  color: $brown-fruits;
+}
+#fruits.active {
+  background-color: $brown-fruits;
+  color: white
+}
+
+#blanc {
+  color: $yellow-blanc;
+}
+#blanc.active {
+  background-color: $yellow-blanc;
+  color: white
+}
+
+#rosé {
+  color: $pink-rose;
+}
+#rosé.active {
+  background-color: $pink-rose;
+  color: white
+}
+
+#rouge {
+  color: $red-rouge;
+}
+#rouge.active {
+  background-color: $red-rouge;
+  color: white
+}
