@@ -28,17 +28,67 @@ user3 = User.create!(name: "Laura", email: "laura@email.com", password: "123456"
 # DRINKS
 puts "beer"
 
-beer1 = Drink.create!(name: "Light", description: "Bière très rafraîchissante et désaltérante. Peu d'arômes, flaveurs courtes et faiblement sucrées.", strength: 4, fermentation: "Lager", color: "Blonde", flavor: "Maltée, céréale")
-beer2 = Drink.create!(name: "Dunkel", description: "Ample et crémeuse. Notes de café, de mélasse et de cacao ", strength: 5, fermentation: "Lager", color: "Brune/Noire", flavor: "Torréfiée, epicée")
-beer3 = Drink.create!(name: "Schwarzbier", description: "Goût prononcé tirant sur l'arôme de mélasse. Saveur de malt grillée, de café, de chocolat, de noisette et de levure.", strength: 5, fermentation: "Lager", color: "Brune/Noire", flavor: "Torréfiée, épicée")
-beer4 = Drink.create!(name: "California Common", description: "Bière légèrement fruitée avec de franches notes maltées et toastées de céréales.", strength: 5, fermentation: "Lager", color: "Ambrée", flavor: "Torréfiée, herbacée")
-beer5 = Drink.create!(name: "Hoppy lager", description: "Bière généreusement houblonnée qui se distingue par ses notes rafraîchissantes et fruitées.", strength: 6, fermentation: "Lager", color: "Blonde", flavor: "Maltée, céréale")
+# beer1 = Drink.create!(name: "Light", description: "Bière très rafraîchissante et désaltérante. Peu d'arômes, flaveurs courtes et faiblement sucrées.", strength: 4, fermentation: "Lager", color: "Blonde", flavor: "Maltée, céréale")
+# beer2 = Drink.create!(name: "Dunkel", description: "Ample et crémeuse. Notes de café, de mélasse et de cacao ", strength: 5, fermentation: "Lager", color: "Brune/Noire", flavor: "Torréfiée, epicée")
+# beer3 = Drink.create!(name: "Schwarzbier", description: "Goût prononcé tirant sur l'arôme de mélasse. Saveur de malt grillée, de café, de chocolat, de noisette et de levure.", strength: 5, fermentation: "Lager", color: "Brune/Noire", flavor: "Torréfiée, épicée")
+# beer4 = Drink.create!(name: "California Common", description: "Bière légèrement fruitée avec de franches notes maltées et toastées de céréales.", strength: 5, fermentation: "Lager", color: "Ambrée", flavor: "Torréfiée, herbacée")
+# beer5 = Drink.create!(name: "Hoppy lager", description: "Bière généreusement houblonnée qui se distingue par ses notes rafraîchissantes et fruitées.", strength: 6, fermentation: "Lager", color: "Blonde", flavor: "Maltée, céréale")
+beer1 = Drink.create!(name: "Witbier", description: "Bière blanche d'origine belge, constituée de malt de froment, d'orge et d'épices (écorce d'orange et coriandre).", strength: "<4% ABV", fermentation: "Ale", color: "Blanche", flavor: "Robe trouble et une aromatique sur les céréales, les épices et une finale citronnée.")
+beer2 = Drink.create!(name: "Gueuze", description: "Surnommée 'Champagne de Bruxelles'. Bière issue d'un savant mélange de lambics (=bière issue d'une fermentation spontanée de part un ensemencement naturel de micro-organismes dans les cuves ouvertes).", strength: "4-6% ABV", fermentation: "Spontanée", color: "Blonde", flavor: "Bouche dominée par une certaine acidité avant que l'amertume ne vienne pointer le bout de son nez. Arômes de pomme et de vanille.")
+beer3 = Drink.create!(name: "Oud Bruin", description: "Bière originaire de Flandres avec un vieillissement de plusieurs mois en cuve. Issue d'une fermentation mixte, elle développe un côté acide,", strength: "4-6% ABV", fermentation: "Mixte", color: "Brune", flavor: "Goût vineux et tannique avec des notes caramélisées ou sucrées très prononcées.")
+beer4 = Drink.create!(name: "Belgian Gold Strong Ale", description: "Bière au caractère prononcé. Elle affiche des notes d'épices, de fruits et d'alcool bien appuyées sur le malt.", strength: ">9% ABV", fermentation: "Ale", color: "Blonde", flavor: "Fruitée, complexe, souvent forte en alcool mais accessible à de nombreux palais. Plus sec qu'une triple belge.")
+beer5 = Drink.create!(name: "Triple Belge", description: "Complexe avec des épices modérées à importantes. Toujours effervescent, jamais astringent.", strength: "6-9% ABV", fermentation: "Ale", color: "Blonde", flavor: "Généreux phénols épicés, poivrés, parfois clous de girofle. Les esters rappellent souvent les agrûmes tels que les oranges.")
+beer6 = Drink.create!(name: "Bière de garde", description: "Bière d'origine du Nord de la France. Bière forte en alcool et plutôt sèche en bouche. Ayant connu une garde plus longue pour apporter des saveurs.", strength: "4-6% ABV", fermentation: "Ale", color: "Ambrée", flavor: "Bière généralement plus sucrée et plus fine de part sa garde. Se porte généralement sur des notes céréalières avec des touches de malt, de pain, d'herbe, de houblon et de fruits.")
+beer7 = Drink.create!(name: "Saison", strength: "4-6% ABV", fermentation: "Ale", color: "Blonde")
+beer8 = Drink.create!(name: "Amber Ale", description: "Couleur allant de l'ambrée au cuivrée. La couleur et le goût varient suivant la quantité et la durée de torréfaction du malt.", strength: "4-6% ABV", fermentation: "Ale", color: "Ambrée", flavor: "Offre des arômes de caramel, de céréales, de sucre roux et pain d'épice.")
+beer9 = Drink.create!(name: "Belgian Dark Strong Ale", description: "Complexe avec une riche douceur maltée. Alcool important et un piquant léger à modéré. Malt riche et fort.", strength: ">9% ABV", fermentation: "Ale", color: "Brune", flavor: "Arômes de caramel et de pain grillé. Notes de raisin sec, de prune, de cerise séchée, de figue ou de pruneau.")
+beer10 = Drink.create!(name: "Stout", description: "Originaire d'Angleterre, la Stout utilise des malts torréfiés. Il suffit de 10% de ces malts dans un brassin pour créer une bière aussi noire et épaisse.", strength: "4-6% ABV", fermentation: "Ale", color: "Noire", flavor: "Bière offre des notes de torréfaction, de café, de cacao, de malt le tout à travers une bouche crémeuse et riche.")
+beer11 = Drink.create!(name: "NEIPA", description: "New England IPA. Construite sur l'aromatique sans l'amertume. Peu filtrée pour obtenir une sensation juteuse en bouche. Version très fruitée et trouble de l'IPA.", strength: "4-6% ABV", fermentation: "Ale", color: "Blonde", flavor: "Issu de plusieurs houblonnages à cru massif afin de renforcer les parfums des houblons aromatiques.B ière qui s'apparente beaucoup à un jus de fruit de part ses puissants arômes fruités.")
+beer12 = Drink.create!(name: "IPA", description: "Bière de caractère créée en Angleterre pur pouvoir résister au transport jusqu'aux colonies britanniques (vertus antiseptiques du houblon).", strength: "4-6% ABV", fermentation: "Ale", color: "Blonde", flavor: "Bière très houblonnée avec des arômes floraux, épicés et d'agrûmes")
+beer13 = Drink.create!(name: "Barley Wine", description: "Egalement appelée 'vin d'orge'. Texture presque liquoreuse, jolie couleur cuivrée et une touche de caramel prononcée. A laisser mûrir plusieurs années dans leur bouteille avant de les consommer.", strength: ">9% ABV", fermentation: "Ale", color: "Ambrée", flavor: "On retrouve généralement des touches d'alcool, de caramel, de fruits secs, de pain grillé, de mélasse (mixture issue de la betterave sucrière ou de la canne à sucre).")
 
 # PHOTOS BEERS
-# puts "Photos"
-# file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1700573434/istockphoto-971852206-612x612_nnpw24.jpg")
-# beer1.photos.attach(io: file, filename: "Lune.png", content_type: "image/jpg")
-# beer1.save
+puts "Photos"
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363620/Bi%C3%A8re_blanche_verre_droit_hdnibr.jpg")
+beer1.photos.attach(io: file, filename: "Witbier", content_type: "image/jpg")
+beer1.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/Bi%C3%A8re_gueuze_verre_%C3%A0_pied_gz7ipj.jpg")
+beer2.photos.attach(io: file, filename: "Gueuze", content_type: "image/jpg")
+beer2.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363620/Bi%C3%A8re_Oud_Bruin_dans_un_verre_ballon_l6zx9n.jpg")
+beer3.photos.attach(io: file, filename: "Oud Bruin", content_type: "image/jpg")
+beer3.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/Bi%C3%A8re_blonde_l%C3%A9g%C3%A8re_pinte_hejkxx.jpg")
+beer4.photos.attach(io: file, filename: "Belgian Gold Strong Ale", content_type: "image/jpg")
+beer4.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363620/Bi%C3%A8re_ambr%C3%A9e_verre_tulipe_md63yg.jpg")
+beer5.photos.attach(io: file, filename: "Triple Belge", content_type: "image/jpg")
+beer5.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/Bi%C3%A8re_blonde_de_garde_xo5zjb.jpg")
+beer6.photos.attach(io: file, filename: "Bière de garde", content_type: "image/jpg")
+beer6.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/Bi%C3%A8re_blonde_de_garde_xo5zjb.jpg")
+beer7.photos.attach(io: file, filename: "Saison", content_type: "image/jpg")
+beer7.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363620/Bi%C3%A8re_ambr%C3%A9e_verre_tulipe_md63yg.jpg")
+beer8.photos.attach(io: file, filename: "Amber Ale", content_type: "image/jpg")
+beer8.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363620/Bi%C3%A8re_belgian_dark_strong_ale_quh7wg.jpg")
+beer9.photos.attach(io: file, filename: "Belgian Dark Strong Ale", content_type: "image/jpg")
+beer9.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363620/Bi%C3%A8re_noire_stout_pinte_ksdpve.jpg")
+beer10.photos.attach(io: file, filename: "Stout", content_type: "image/jpg")
+beer10.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/Bi%C3%A8re_blonde_l%C3%A9g%C3%A8re_pinte_hejkxx.jpg")
+beer11.photos.attach(io: file, filename: "NEIPA", content_type: "image/jpg")
+beer11.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/Bi%C3%A8re_blonde_l%C3%A9g%C3%A8re_pinte_hejkxx.jpg")
+beer12.photos.attach(io: file, filename: "IPA", content_type: "image/jpg")
+beer12.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/bi%C3%A8re_barley_wine_xjp8n9.png")
+beer13.photos.attach(io: file, filename: "Barley Wine", content_type: "image/jpg")
+beer13.save
+
 
 puts "wine"
 
@@ -75,16 +125,43 @@ cheese7 = Food.create!(name: "Bleu d'Auvergne", family: "Fromage à pâte persil
 cheese8 = Food.create!(name: "Roquefort", family: "Fromage à pâte persillé", description: "", category_id: category3.id, strength: "Saveur franche, fraîche, fine et prononcée", milk: "Brebis", aging: "Jeune", origin: "Aveyron")
 
 # PHOTOS CHEESES
-# puts "Photos"
-# file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1700573434/istockphoto-971852206-612x612_nnpw24.jpg")
-# cheese1.photos.attach(io: file, filename: "Lune.png", content_type: "image/jpg")
-# cheese1.save
+puts "Photos"
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376099/_3cf8c982-e314-4171-8c65-0916cf4e4c55_pisldv.jpg")
+cheese1.photos.attach(io: file, filename: "Brie de Meaux jeune", content_type: "image/jpg")
+cheese1.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376099/_3cf8c982-e314-4171-8c65-0916cf4e4c55_pisldv.jpg")
+cheese2.photos.attach(io: file, filename: "Brie de Meaux vieux", content_type: "image/jpg")
+cheese2.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376165/Neufchatel_exulse.jpg")
+cheese3.photos.attach(io: file, filename: "Neufchatel jeune", content_type: "image/jpg")
+cheese3.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376165/Neufchatel_exulse.jpg")
+cheese4.photos.attach(io: file, filename: "Neufchatel vieux", content_type: "image/jpg")
+cheese4.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371828/1701362185805xo0fnur9_ybufec.png")
+cheese5.photos.attach(io: file, filename: "Reblochon", content_type: "image/jpg")
+cheese5.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376360/_47e1f8ef-0520-4a4b-a59d-6b3b2ca3f114_bbrfmw.jpg")
+cheese6.photos.attach(io: file, filename: "Saint-Nectaire", content_type: "image/jpg")
+cheese6.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376360/Roquefort_odcuit.jpg")
+cheese7.photos.attach(io: file, filename: "Bleu d'Auvergne", content_type: "image/jpg")
+cheese7.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376360/Roquefort_odcuit.jpg")
+cheese8.photos.attach(io: file, filename: "Roquefort", content_type: "image/jpg")
+cheese8.save
 
 # MATCHES
 puts "matches"
 
 match1 = Match.create!(food_id: cheese1.id, drink_id: beer1.id)
 match2 = Match.create!(food_id: cheese2.id, drink_id: beer2.id)
+match3 = Match.create!(food_id: cheese2.id, drink_id: beer2.id)
+match4 = Match.create!(food_id: cheese2.id, drink_id: beer2.id)
+match5 = Match.create!(food_id: cheese2.id, drink_id: beer2.id)
+match6 = Match.create!(food_id: cheese2.id, drink_id: beer2.id)
+match7 = Match.create!(food_id: cheese2.id, drink_id: beer2.id)
+match8 = Match.create!(food_id: cheese2.id, drink_id: beer2.id)
 
 # PAIRINGS
 puts "pairings"
