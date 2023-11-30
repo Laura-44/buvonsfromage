@@ -1,15 +1,24 @@
-<h1>Profil utilisateur</h1>
+<div id="edit-profiles">
+<h1 class="edit-title">Profil utilisateur</h1>
+
+  <div class="title-line">
+    <div class="title-dot"></div>
+  </div>
 
 <div class="profil">
-  <p>Nom
+  <div class= 'index-subtitle'>Nom
   <%= current_user.name %>
-  </p>
+  </div>
+
+  <div class= 'index-subtitle'>
   <p>Boissons à écarter</p>
+  </div>
+
   <div class="beer">
     <div class="button">
       <%= submit_tag 'Bière' %>
     </div>
-    <div>
+    <div class="option-wrapper">
       <%= link_to 'Blanche', user_categories_path(category: "Bière", name: "Blanche"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id: "blanche" %>
       <%= link_to 'Blonde', user_categories_path(category: "Bière", name: "Blonde"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id:"blonde"   %>
       <%= link_to 'Ambrée', user_categories_path(category: "Bière", name: "Ambrée"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "ambrée"  %>
@@ -23,7 +32,7 @@
     <div class="button">
       <%= submit_tag 'Vin' %>
     </div>
-    <div>
+    <div class="option-wrapper">
       <%= link_to 'Blanc', user_categories_path(category: "Vin", name: "Blanc"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "blanc"  %>
       <%= link_to 'Rosé', user_categories_path(category: "Vin", name: "Rosé"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "rosé"  %>
       <%= link_to 'Rouge', user_categories_path(category: "Vin", name: "Rouge"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "rouge"  %>
@@ -31,6 +40,7 @@
   </div>
 
   <div class="button">
-    <%= submit_tag 'VALIDER' %>
+    <%= submit_tag 'VALIDER', class: 'search-btn'%>
   </div>
+</div>
 </div>
