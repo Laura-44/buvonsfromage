@@ -25,7 +25,6 @@ user1 = User.create!(name: "Marion", email: "marion@email.com", password: "12345
 user2 = User.create!(name: "Rémy", email: "rémy@email.com", password: "456789")
 user3 = User.create!(name: "Laura", email: "laura@email.com", password: "654321")
 
-
 # DRINKS
 puts "beer"
 
@@ -35,9 +34,21 @@ beer3 = Drink.create!(name: "Schwarzbier", description: "Goût prononcé tirant 
 beer4 = Drink.create!(name: "California Common", description: "Bière légèrement fruitée avec de franches notes maltées et toastées de céréales.", strength: 5, fermentation: "Lager", color: "Ambrée", flavor: "Torréfiée, herbacée")
 beer5 = Drink.create!(name: "Hoppy lager", description: "Bière généreusement houblonnée qui se distingue par ses notes rafraîchissantes et fruitées.", strength: 6, fermentation: "Lager", color: "Blonde", flavor: "Maltée, céréale")
 
+# PHOTOS BEERS
+# puts "Photos"
+# file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1700573434/istockphoto-971852206-612x612_nnpw24.jpg")
+# beer1.photos.attach(io: file, filename: "Lune.png", content_type: "image/jpg")
+# beer1.save
+
 puts "wine"
 
 wine1 = Drink.create!(name: "Light", description: "Bière très rafraîchissante et désaltérante. Peu d'arômes, flaveurs courtes et faiblement sucrées.", strength: 4, fermentation: "Lager", color: "Blonde", flavor: "Maltée, céréale")
+
+# PHOTOS WINES
+# puts "Photos"
+# file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1700573434/istockphoto-971852206-612x612_nnpw24.jpg")
+# wine1.photos.attach(io: file, filename: "Lune.png", content_type: "image/jpg")
+# wine1.save
 
 # CATEGORIES
 category1 = Category.create!(name: "Bière")
@@ -63,6 +74,12 @@ cheese6 = Food.create!(name: "Saint-Nectaire", family: "Fromage à pâte pressé
 cheese7 = Food.create!(name: "Bleu d'Auvergne", family: "Fromage à pâte persillé", description: "Saveur légèrement salée et texture fondante", category_id: category3.id, strength: "Fort", milk: "Vache", aging: "Vieux", origin: "Puy de Dôme")
 cheese8 = Food.create!(name: "Roquefort", family: "Fromage à pâte persillé", description: "", category_id: category3.id, strength: "Saveur franche, fraîche, fine et prononcée", milk: "Brebis", aging: "Jeune", origin: "Aveyron")
 
+# PHOTOS CHEESES
+# puts "Photos"
+# file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1700573434/istockphoto-971852206-612x612_nnpw24.jpg")
+# cheese1.photos.attach(io: file, filename: "Lune.png", content_type: "image/jpg")
+# cheese1.save
+
 # MATCHES
 puts "matches"
 
@@ -77,7 +94,6 @@ pairing2 = Pairing.create!(food_id: cheese4.id, drink_id: beer4.id, user_id: use
 
 # USER-CATEGORIES
 # puts "user-categories"
-
 
 # CATEGORIE-DRINKS
 # puts "categorie-drinks"

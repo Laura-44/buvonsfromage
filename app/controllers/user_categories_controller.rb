@@ -1,13 +1,32 @@
 class UserCategoriesController < ApplicationController
+  # def create
+  #   @user_category = UserCategory.new
+  #   @user_category.category = Category.find_by(name: params[:category])
+  #   @user_category.name = params[:name]
+  #   @user_category.user = current_user
+  #   @user_category.save
+  #   redirect_to user_category_path(@user_category)
+  # end
+
   def create
     @user_category = UserCategory.new
-    # @user_category.category = UserCategory.find_by(category: params[:category])
-    raise
-    @user_category.name = UserCategory.find(params[:name])
-    @user_category = UserCategory.find_by(name: params[:name])
-    @user_category.user =
-    @user_category.save
-    redirect_to user_category_path(@user_category)
+    existing_category = Category.find_by(name: params[:category])
+    if existing_category
+      existing_category.destroy
+    else
+      @user_category.category = Category.create(name: params[:category])
+    end
+    @user_category.name = params[:name]
+    @user_category.user = current_user
+    # @user_category.save
+    # raise
+    # redirect_to user_category_path(@user_category)
+    if @user_category.save
+      # Utilisez user_category_path avec l'ID de la nouvelle catégorie
+      redirect_to user_category_path(@user_category)
+    else
+      render 'profiles/edit'
+    end
   end
 
   # def create
@@ -20,6 +39,4 @@ class UserCategoriesController < ApplicationController
   #     render :new
   #   end
   # end
-
-  private
 end
