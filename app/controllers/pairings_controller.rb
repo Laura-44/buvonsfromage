@@ -5,17 +5,25 @@ class PairingsController < ApplicationController
   end
 
   def create
-    @pairing = Pairing.new(params[:id])
+    # raise
+    # @second_subcategory = Category.find(params[:pairing][:second_category_id])
+    # raise
+    @pairing = Pairing.new
+    @category = Category.find(params[:pairing][:category_id])
+    @second_category = Category.find(params[:pairing][:second_category_id])
+    @pairing.drink = @drink = Drink.find(params[:pairing][:drink_id])
+    @pairing.food = @food = Food.find(params[:pairing][:food_id])
     @pairing.user = current_user
-    @pairing.save
-    redirect_to categories_path
+    @pairing.save!
+    # raise
+    redirect_to categories_path({second_category_id: @second_category.id ,category_id:@category.id})
   end
 
 
   private
 
   def pairings_params
-    params.require(:pairings).permit(:pairing_id, :food_id, :drink_id, :user_id, photos: [])
+    params.require(:pairing).permit(:food_id, :drink_id)
   end
 
 end

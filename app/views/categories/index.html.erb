@@ -3,22 +3,27 @@
 <%= @category.name %>
 <% @choices.each do |choice| %>
 
-<%= simple_form_for Pairing.new do |f| %>
-  <%= choice.name %>
-  <div class="d-none">
-    <% if @category.name == "Cheese" %>
-      <%= f.input :drink_id, value: choice.id %>
-    <% else %>
-     <%= f.input :food_id, input_html: {value: choice.id} %>
+  <div class="pairing" data-controller="pairing">
+    <%= simple_form_for Pairing.new do |f| %>
+      <%= choice.name %>
+      <div class="d-none">
+        <% if @category.name == "Fromage" %>
+          <%= f.input :drink_id, value: choice.id %>
+          <%= f.hidden_field :food_id, value: @category.foods.sample.id %>
+        <% else %>
+        <% drink =  @category.drinks.sample%>
+          <%= f.input :food_id, input_html: {value: choice.id} %>
+          <%= f.hidden_field :drink_id, value: drink.id %>
+        <% end %>
+      </div>
+        <%= f.hidden_field :category_id, value: @category.id %>
+          <%= f.hidden_field :second_category_id, value: @second_category.id%>
+
+        <%= f.submit "Je valide" %>
+    <% end %>
+    <%= link_to "X", categories_path(@categories) %>
   <% end %>
-  </div>
-  <%= f.submit "Je valide" %>
-<% end %>
-
-
-  <%# <%= link_to "je valide", categories_path(@pairings) %>
-  <%= link_to "X", categories_path(@categories) %>
-<% end %>
+</div>
 
 <%# create de pairings qui redigire vers categories  : ok%>
 
@@ -44,3 +49,5 @@
     this.element.innerText = "Bingo!";
     this.element.setAttribute("disabled", "");
   } %>
+
+  <%# <%= link_to "je valide", categories_path(@pairings) %>
