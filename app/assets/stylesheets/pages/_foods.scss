@@ -1,0 +1,45 @@
+#index-foods {
+  background-color: $purple;
+  height: 100dvh;
+  width: 100%;
+  padding: 70px 25px;
+
+  .index-title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: white;
+  }
+
+  .index-subtitle {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: white;
+  }
+
+  .actions input {
+    background-color: #ffffff;
+    width: 346px;
+    justify-content: center;
+    height: 62px;
+    padding: 15px 16px;
+    border-radius: 46px;
+    font-weight: lighter;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+
+  .field select {
+    background-color: #ffffff;
+    padding: 15px 16px;
+    width: 338px;
+    height: 50px;
+    border-radius: 10px;
+    font-weight: lighter;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+}
