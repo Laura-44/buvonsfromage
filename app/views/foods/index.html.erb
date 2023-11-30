@@ -1,37 +1,37 @@
 <div id="index-foods">
 
   <h1 class="index-title">Sélection du jour</h1>
-  <h2 class="index-subtitle">Ce que j'ai ...</h2>
 
-  <div data-controller="dropdown">
+  <div class="title-line">
+    <div class="title-dot"></div>
+  </div>
+
+  <div class="form-search-container" data-controller="dropdown">
     <%= form_tag categories_path, method: :get, id: 'category-form' do %>
-      <div class="field">
-        <%= label_tag :category_id, '' %>
-        <%= select_tag :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, @selected_category_id), prompt: 'Recherche ...', id: 'category-select', data: { action: "change->dropdown#display", dropdown_target: "categorySelect" } %>
+      <div class="search-form-wrapper">
+        <div class="field">
+          <%= label_tag :category_id, 'Ce que j\'ai ...', class: 'index-subtitle' %>
+          <%= select_tag :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, @selected_category_id), prompt: 'Recherche', id: 'category-select', data: { action: "change->dropdown#display", dropdown_target: "categorySelect" } %>
+        </div>
+
+        <div class="field" id="sub-category-field" style="display: none" data-dropdown-target="subCategoryField">
+          <%= label_tag :subcategory_id, 'et plus précisement :', class: 'index-subtitle' %>
+          <%= select_tag :subcategory_id, options_for_select(@categorie_drinks.map { |s| [s.name, s.id] }), prompt: 'Sélectionnez une sous-catégorie', id: 'sub-category-select', data: { dropdown_target: "subCategorySelect"} %>
+        </div>
+
+        <%# 2E PRODUIT A SELECTIONNER %>
+        <div class="field">
+          <%= label_tag :second_category_id, 'Ce que je cherche ...', class: 'index-subtitle' %>
+          <%= select_tag :second_category_id, options_for_select(@second_categories.map { |c| [c.name, c.id] }, @selected_second_category_id), prompt: 'Recherche', id: 'second-category-select', data: { action: "change->dropdown#secondDisplay", dropdown_target: "secondCategorySelect" } %>
+        </div>
+
+        <div class="field" id="second-sub-category-field" style="display: none" data-dropdown-target="secondSubCategoryField">
+          <%= label_tag :second_subcategory_id, 'et plus précisement :', class: 'index-subtitle' %>
+          <%= select_tag :second_subcategory_id, options_for_select(@second_categorie_drinks.map { |s| [s.name, s.id] }), prompt: 'Sélectionnez une sous-catégorie', id: 'second-sub-category-select', data: { dropdown_target: "secondSubCategorySelect"} %>
+        </div>
       </div>
 
-      <div class="field" id="sub-category-field" style="display: none" data-dropdown-target="subCategoryField">
-        <%= label_tag :subcategory_id, 'Sous-catégorie' %>
-        <%= select_tag :subcategory_id, options_for_select(@categorie_drinks.map { |s| [s.name, s.id] }), prompt: 'Sélectionnez une sous-catégorie', id: 'sub-category-select', data: { dropdown_target: "subCategorySelect"} %>
-      </div>
-
-      <%# 2E PRODUIT A SELECTIONNER %>
-
-      <h2 class="index-subtitle">Ce que je cherche ...</h2>
-
-      <div class="field">
-        <%= label_tag :second_category_id, '' %>
-        <%= select_tag :second_category_id, options_for_select(@second_categories.map { |c| [c.name, c.id] }, @selected_second_category_id), prompt: 'Recherche ...', id: 'second-category-select', data: { action: "change->dropdown#secondDisplay", dropdown_target: "secondCategorySelect" } %>
-      </div>
-
-      <div class="field" id="second-sub-category-field" style="display: none" data-dropdown-target="secondSubCategoryField">
-        <%= label_tag :second_subcategory_id, 'Sous-catégorie' %>
-        <%= select_tag :second_subcategory_id, options_for_select(@second_categorie_drinks.map { |s| [s.name, s.id] }), prompt: 'Sélectionnez une sous-catégorie', id: 'second-sub-category-select', data: { dropdown_target: "secondSubCategorySelect"} %>
-      </div>
-
-      <div class="actions">
-        <%= submit_tag 'RECHERCHER' %>
-      </div>
+      <%= submit_tag 'RECHERCHER', class: 'search-btn' %>
     <% end %>
   </div>
 </div>
