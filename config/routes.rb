@@ -36,3 +36,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 end
+
+# No route matches {:action=>"show", :controller=>"user_categories", :id=>nil}, missing required keys: [:id]

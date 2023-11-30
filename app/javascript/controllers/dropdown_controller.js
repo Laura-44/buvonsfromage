@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["categorySelect", "subCategoryField", "subCategorySelect", "secondCategorySelect", "secondSubCategoryField", "secondSubCategorySelect"]
 
   connect() {
-    // console.log("coucou");
+    console.log("coucou");
   }
 
   display(event) {
