@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
       @user_pairings = Pairing.where(user: current_user)
 
       @category = Category.find(params[:category_id])
+
       # si params second_category_id is empty ou nil alors on ira chercher autre chose
       # if @second_category = params[:second_category_id].nil?
 

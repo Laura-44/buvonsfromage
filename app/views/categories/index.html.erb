@@ -23,11 +23,12 @@
     <% end %>
     <%= link_to "X", categories_path(@categories) %>
 
-    <%# <% if @category.name == "Fromage" %> 
-      <%# <% link_to "Description", food_path %>
-    <%# <% else %>
-      <%# <% link_to "Description", drink_path %>
-    <%# <% end %>
+
+    <% if @category.name == "Fromage" %>
+        <%= link_to "Description", drink_path(choice.id) %>
+    <% else %>
+        <%= link_to "Description", food_path(choice.id) %>
+    <% end %>
 
     <%# <%= link_to "Description", food_path %>
     <%# <%= link_to "Description", drink_path %>
