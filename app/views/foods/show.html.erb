@@ -1,7 +1,7 @@
 <div id="edit-profiles">
 
-<%= cl_image_tag("1xv2onih5kz3c8dctrq8fu2ks3xk",
-        width: 430, height: 430, crop: :fill) %>
+<%= cl_image_tag(@food.photo.key, width: 430, height: 430, crop: :fill) %>
+
 <%= @food.name %>
 <%= @food.milk %>
 <%= @food.aging %>
@@ -11,6 +11,7 @@
 
 
     <div class="button">
-      <%= submit_tag 'COMMENCER', class: 'search-btn'%>
+      <%= submit_tag 'TROUVER', class: 'search-btn'%>
     </div>
+
 </div>
