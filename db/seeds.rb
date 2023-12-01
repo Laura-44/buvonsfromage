@@ -92,13 +92,56 @@ beer13.save
 
 puts "wine"
 
-wine1 = Drink.create!(name: "Light", description: "Bière très rafraîchissante et désaltérante. Peu d'arômes, flaveurs courtes et faiblement sucrées.", strength: 4, fermentation: "Lager", color: "Blonde", flavor: "Maltée, céréale")
+# wine1 = Drink.create!(name: "Light", description: "Bière très rafraîchissante et désaltérante. Peu d'arômes, flaveurs courtes et faiblement sucrées.", strength: 4, fermentation: "Lager", color: "Blonde", flavor: "Maltée, céréale")
+wine1 = Drink.create!(name: "Pauillac", grape: "Cabernet Sauvignon", description: "Massif et puissant", strength: "11,5%-12,5%", origin: "Bordeaux", color: "Vin rouge brique (vieux)", flavor: "Poivrons, cassis, mûre")
+wine2 = Drink.create!(name: "Sauternes", grape: "Sauvignon", description: "Ample, grasse, onctueuse et puissante", origin: "Bordeaux", color: "Vin blanc liquoreux jaune or vif", flavor: "Bois (végétal), poire, poivron vert")
+wine3 = Drink.create!(name: "Pommard", grape: "Pinot Noir", description: "Structure tendre, caractère charnu, richesse et puissance", origin: "Bourgogne", color: "Vin rouge concentré (jeune)", flavor: "▪ Odeurs animales : cuir ▪ Fruits rouges ▪ Sous-bois")
+wine4 = Drink.create!(name: "Sancerre", grape: "Chardonnay", description: "Vin blanc sec aromatique, svelte, nerveux", origin: "Bourgogne", color: "Vin blanc sec jaune vert ou paille", flavor: "▪ Alimentaires : beurre frais, miel ▪ Minérales : pierre à fusil ▪ Fruits secs et confits : noisette")
+wine5 = Drink.create!(name: "Riesling", grape: "Riesling", description: "Gras, ample et minéral", origin: "Alsace", color: "Vin blanc sec", flavor: "▪ Acacia, citron ▪ Fleurs blanches")
+wine6 = Drink.create!(name: "Chinon", grape: "Cabernet Franc", description: "Corpulent, fondu et velouté", origin: "Val-de-Loire", color: "Vin rouge concentré", flavor: "Poivrons ▪ Fruits rouges")
+wine7 = Drink.create!(name: "Muscadet", grape: "Melon Blanc", description: "Vif, léger et aromatique", origin: "Val-de-Loire", color: "Vin blanc sec jaune pâle", flavor: "▪ Fruits frais : citron ▪ Florales : chèvrefeuille")
+wine8 = Drink.create!(name: "Savennières", grape: "Chenin Blanc", description: "Vin blanc riche et sec aux arômes de fruits blancs; miellé, rappellant la pomme compotée, le coing, les fleurs blanches", origin: "Val-de-Loire", color: "Vin blanc sec jaune paille", flavor: "Cire d’abeille ▪ Alimentaires : miel ▪ Florales : acacia ▪ Fruits secs et confits : abricot sec")
+wine9 = Drink.create!(name: "Saint-Joseph", grape: "Syrah", description: "Belle amplitude, longeur moyenne, assez souple", origin: "Côtes-du-Rhone", color: "Vin rouge pourpre (jeune)", flavor: "▪ Empyreumatiques : poivre ▪ Fruits noirs ▪ Sous-Bois : Truffes")
+wine10 = Drink.create!(name: "Condrieu", grape: "Viognier", description: "Vin blanc aromatique, riche, ample, sec", origin: "Côtes-du-Rhone", color: "Vin blanc sec jaune vert", flavor: "▪ Alimentaires : pain d’épice ▪ Fruits frais : abricots, pêche, mangue")
+wine11 = Drink.create!(name: "Saint-Amour", grape: "Gamay", description: "Léger, fin et soyeux", origin: "Beaujolais", color: "Vin rouge concentré, à boire jeune", flavor: "Bonbon acidulé ▪ Fruits rouges")
+
 
 # PHOTOS WINES
-# puts "Photos"
-# file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1700573434/istockphoto-971852206-612x612_nnpw24.jpg")
-# wine1.photos.attach(io: file, filename: "Lune.png", content_type: "image/jpg")
-# wine1.save
+puts "Photos"
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371347/vin_rouge_3_ifi2nq.jpg")
+wine1.photos.attach(io: file, filename: "Pauillac", content_type: "image/jpg")
+wine1.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371225/vin_blanc_4_eozuay.jpg")
+wine2.photos.attach(io: file, filename: "Sauternes", content_type: "image/jpg")
+wine2.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371220/vin_rouge_2_zrjzad.jpg")
+wine3.photos.attach(io: file, filename: "Pommard", content_type: "image/jpg")
+wine3.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371216/vin_blanc_2_lyepyf.jpg")
+wine4.photos.attach(io: file, filename: "Sancerre", content_type: "image/jpg")
+wine4.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371216/vin_blanc_2_lyepyf.jpg")
+wine5.photos.attach(io: file, filename: "Riesling", content_type: "image/jpg")
+wine5.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371217/vin_rouge_1_vk59cb.jpg")
+wine6.photos.attach(io: file, filename: "Chinon", content_type: "image/jpg")
+wine6.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371216/vin_blanc_2_lyepyf.jpg")
+wine7.photos.attach(io: file, filename: "Muscadet", content_type: "image/jpg")
+wine7.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371216/vin_blanc_2_lyepyf.jpg")
+wine8.photos.attach(io: file, filename: "Savennières", content_type: "image/jpg")
+wine8.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371206/vin_rouge_vtjiaj.jpg")
+wine9.photos.attach(io: file, filename: "Saint-Joseph", content_type: "image/jpg")
+wine9.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371199/vin_blanc_huosme.jpg")
+wine10.photos.attach(io: file, filename: "Condrieu", content_type: "image/jpg")
+wine10.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371206/vin_rouge_vtjiaj.jpg")
+wine11.photos.attach(io: file, filename: "Saint-Amour", content_type: "image/jpg")
+wine11.save
+
 
 # CATEGORIES
 category1 = Category.create!(name: "Bière")
@@ -126,30 +169,38 @@ cheese8 = Food.create!(name: "Roquefort", family: "Fromage à pâte persillé", 
 
 # PHOTOS CHEESES
 puts "Photos"
-file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376099/_3cf8c982-e314-4171-8c65-0916cf4e4c55_pisldv.jpg")
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376099/brie%20de%20meaux.jpg")
 cheese1.photos.attach(io: file, filename: "Brie de Meaux jeune", content_type: "image/jpg")
 cheese1.save
-file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376099/_3cf8c982-e314-4171-8c65-0916cf4e4c55_pisldv.jpg")
+puts "brie1"
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376099/brie%20de%20meaux.jpg")
 cheese2.photos.attach(io: file, filename: "Brie de Meaux vieux", content_type: "image/jpg")
 cheese2.save
+puts "neufchatel"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376165/Neufchatel_exulse.jpg")
 cheese3.photos.attach(io: file, filename: "Neufchatel jeune", content_type: "image/jpg")
 cheese3.save
+puts "neufchatel"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376165/Neufchatel_exulse.jpg")
 cheese4.photos.attach(io: file, filename: "Neufchatel vieux", content_type: "image/jpg")
 cheese4.save
+puts "reblochon"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371828/1701362185805xo0fnur9_ybufec.png")
 cheese5.photos.attach(io: file, filename: "Reblochon", content_type: "image/jpg")
 cheese5.save
+puts "saint-nectaire"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376360/_47e1f8ef-0520-4a4b-a59d-6b3b2ca3f114_bbrfmw.jpg")
 cheese6.photos.attach(io: file, filename: "Saint-Nectaire", content_type: "image/jpg")
 cheese6.save
+puts "bleu"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376360/Roquefort_odcuit.jpg")
 cheese7.photos.attach(io: file, filename: "Bleu d'Auvergne", content_type: "image/jpg")
 cheese7.save
+puts "roquefort"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376360/Roquefort_odcuit.jpg")
 cheese8.photos.attach(io: file, filename: "Roquefort", content_type: "image/jpg")
 cheese8.save
+
 
 # MATCHES
 puts "matches"
