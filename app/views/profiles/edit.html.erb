@@ -1,4 +1,4 @@
-<div id="edit-profiles">
+
   <h1 class="edit-title">Profil utilisateur</h1>
 
   <div class="title-line">
@@ -23,7 +23,7 @@
           </button>
 
           <div class="dropdown-menu option-container">
-            <div class="option-wrapper">
+            <div class="option-wrapper"><div id="edit-profiles">
               <%= link_to 'Blanche', user_categories_path(category: "Bière", name: "Blanche"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id: "blanche" %>
               <%= link_to 'Blonde', user_categories_path(category: "Bière", name: "Blonde"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id:"blonde"   %>
               <%= link_to 'Ambrée', user_categories_path(category: "Bière", name: "Ambrée"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "ambrée"  %>
