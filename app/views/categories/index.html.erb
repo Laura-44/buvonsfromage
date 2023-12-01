@@ -2,9 +2,9 @@
 
 <%= @category.name %>
 <% @choices.each do |choice| %>
-  <% choice.photos.each do |photo| %>
-    <%= cl_image_tag(photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2") %>
-  <% end %>
+  <%# <% choice.photo.each do |photo| %>
+    <%= cl_image_tag choice.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2" %>
+  <%# <% end %>
 
     <div class="pairing" data-controller="pairing">
       <%= simple_form_for Pairing.new do |f| %>
@@ -17,6 +17,15 @@
           <% drink =  @category.drinks.sample%>
             <%= f.input :food_id, input_html: {value: choice.id} %>
             <%= f.hidden_field :drink_id, value: drink.id %>
+            <%# <% raise %>
+            <%# <%= cl_image_tag drink.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2" %> 
+            <%# <% test = Food.first %>
+            <%# <% #raise %>
+              <%# <%= cl_image_tag(test.first.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2") %>
+
+            <%# <% @category.drinks.last.photos.each do |image| %>
+              <%# <%= cl_image_tag(image.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2") %>
+            <%# <% end %>
           <% end %>
         </div>
           <%= f.hidden_field :category_id, value: @category.id %>
