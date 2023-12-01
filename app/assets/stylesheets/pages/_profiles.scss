@@ -34,7 +34,14 @@
   }
 }
 
-.button {
+.profil-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.beer {
   font-size: 16px;
     margin-bottom: 22px;
     font-style: normal;
@@ -52,10 +59,39 @@
   color: white;
 }
 
+.option-container {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  position: relative !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
 .option-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px 34px;
+}
+
+.toggle-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 12px 16px;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: black;
+  border: none;
+}
+.toggle-input:after {
+  content: "";
+  display: none;
 }
 
 .beer a,
@@ -171,4 +207,8 @@
   line-height: normal;
   letter-spacing: 2.4px;
   border: none;
+}
+
+.search-form-wrapper {
+  flex-grow: 1;
 }
