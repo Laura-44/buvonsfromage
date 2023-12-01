@@ -170,35 +170,35 @@ cheese8 = Food.create!(name: "Roquefort", family: "Fromage à pâte persillé", 
 # PHOTOS CHEESES
 puts "Photos"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376099/brie%20de%20meaux.jpg")
-cheese1.photos.attach(io: file, filename: "Brie de Meaux jeune", content_type: "image/jpg")
+cheese1.photo.attach(io: file, filename: "Brie de Meaux jeune", content_type: "image/jpg")
 cheese1.save
 puts "brie1"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376099/brie%20de%20meaux.jpg")
-cheese2.photos.attach(io: file, filename: "Brie de Meaux vieux", content_type: "image/jpg")
+cheese2.photo.attach(io: file, filename: "Brie de Meaux vieux", content_type: "image/jpg")
 cheese2.save
 puts "neufchatel"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376165/Neufchatel_exulse.jpg")
-cheese3.photos.attach(io: file, filename: "Neufchatel jeune", content_type: "image/jpg")
+cheese3.photo.attach(io: file, filename: "Neufchatel jeune", content_type: "image/jpg")
 cheese3.save
 puts "neufchatel"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376165/Neufchatel_exulse.jpg")
-cheese4.photos.attach(io: file, filename: "Neufchatel vieux", content_type: "image/jpg")
+cheese4.photo.attach(io: file, filename: "Neufchatel vieux", content_type: "image/jpg")
 cheese4.save
 puts "reblochon"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371828/1701362185805xo0fnur9_ybufec.png")
-cheese5.photos.attach(io: file, filename: "Reblochon", content_type: "image/jpg")
+cheese5.photo.attach(io: file, filename: "Reblochon", content_type: "image/jpg")
 cheese5.save
 puts "saint-nectaire"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376360/_47e1f8ef-0520-4a4b-a59d-6b3b2ca3f114_bbrfmw.jpg")
-cheese6.photos.attach(io: file, filename: "Saint-Nectaire", content_type: "image/jpg")
+cheese6.photo.attach(io: file, filename: "Saint-Nectaire", content_type: "image/jpg")
 cheese6.save
 puts "bleu"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376360/Roquefort_odcuit.jpg")
-cheese7.photos.attach(io: file, filename: "Bleu d'Auvergne", content_type: "image/jpg")
+cheese7.photo.attach(io: file, filename: "Bleu d'Auvergne", content_type: "image/jpg")
 cheese7.save
 puts "roquefort"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376360/Roquefort_odcuit.jpg")
-cheese8.photos.attach(io: file, filename: "Roquefort", content_type: "image/jpg")
+cheese8.photo.attach(io: file, filename: "Roquefort", content_type: "image/jpg")
 cheese8.save
 
 
