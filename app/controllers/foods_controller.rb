@@ -23,4 +23,10 @@ class FoodsController < ApplicationController
   def show
     @food = Food.find(params[:id])
   end
+
+  private
+
+  def food_params
+    params.require(:food).permit(photos: [])
+  end
 end
