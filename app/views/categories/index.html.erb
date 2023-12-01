@@ -2,33 +2,36 @@
 
 <%= @category.name %>
 <% @choices.each do |choice| %>
+  <% choice.photos.each do |photo| %>
+    <%= cl_image_tag(photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2") %>
+  <% end %>
 
-  <div class="pairing" data-controller="pairing">
-    <%= simple_form_for Pairing.new do |f| %>
-      <%= choice.name %>
-      <div class="d-none">
-        <% if @category.name == "Fromage" %>
-          <%= f.input :drink_id, value: choice.id %>
-          <%= f.hidden_field :food_id, value: @category.foods.sample.id %>
-        <% else %>
-        <% drink =  @category.drinks.sample%>
-          <%= f.input :food_id, input_html: {value: choice.id} %>
-          <%= f.hidden_field :drink_id, value: drink.id %>
-        <% end %>
-      </div>
-        <%= f.hidden_field :category_id, value: @category.id %>
-          <%= f.hidden_field :second_category_id, value: @second_category.id%>
+    <div class="pairing" data-controller="pairing">
+      <%= simple_form_for Pairing.new do |f| %>
+        <%= choice.name %>
+        <div class="d-none">
+          <% if @category.name == "Fromage" %>
+            <%= f.input :drink_id, value: choice.id %>
+            <%= f.hidden_field :food_id, value: @category.foods.sample.id %>
+          <% else %>
+          <% drink =  @category.drinks.sample%>
+            <%= f.input :food_id, input_html: {value: choice.id} %>
+            <%= f.hidden_field :drink_id, value: drink.id %>
+          <% end %>
+        </div>
+          <%= f.hidden_field :category_id, value: @category.id %>
+            <%= f.hidden_field :second_category_id, value: @second_category.id%>
 
-        <%= f.submit "Je valide" %>
-    <% end %>
-    <%= link_to "X", categories_path(@categories) %>
+          <%= f.submit "Je valide" %>
+      <% end %>
+      <%= link_to "X", categories_path(@categories) %>
 
 
-    <% if @category.name == "Fromage" %>
-        <%= link_to "Description", drink_path(choice.id) %>
-    <% else %>
-        <%= link_to "Description", food_path(choice.id) %>
-    <% end %>
+      <% if @category.name == "Fromage" %>
+          <%= link_to "Description", drink_path(choice.id) %>
+      <% else %>
+          <%= link_to "Description", food_path(choice.id) %>
+      <% end %>
 
     <%# <%= link_to "Description", food_path %>
     <%# <%= link_to "Description", drink_path %>

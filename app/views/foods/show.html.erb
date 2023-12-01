@@ -1,6 +1,16 @@
+<div id="edit-profiles">
+
+<%= cl_image_tag("1xv2onih5kz3c8dctrq8fu2ks3xk",
+        width: 430, height: 430, crop: :fill) %>
 <%= @food.name %>
 <%= @food.milk %>
 <%= @food.aging %>
 <%= @food.origin %>
 <%= @food.description %>
 <%= link_to 'TROUVER', foods_path %> <%# la route n'est pas la bonne %>
+
+
+    <div class="button">
+      <%= submit_tag 'COMMENCER', class: 'search-btn'%>
+    </div>
+</div>
