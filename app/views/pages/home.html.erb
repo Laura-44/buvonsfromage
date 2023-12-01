@@ -1,6 +1,14 @@
 <div id="home">
+  <div class="category-form">
 
-<h1 class="index-home">buvons Fromage</h1>
+    <%= cl_image_tag("Logo_BF_4_oheu1j",
+        width: 120, height: 120, crop: :fill) %>
 
+    <%= cl_image_tag("buvons_Fromage_-_bandeau_368x478px_1_pttgak",
+        width: 368, height: 487, crop: :fill) %>
 
+    <div class="button">
+      <%= submit_tag 'COMMENCER', class: 'search-btn'%>
+    </div>
+  </div>
 </div>

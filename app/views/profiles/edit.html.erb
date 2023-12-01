@@ -1,46 +1,64 @@
 <div id="edit-profiles">
-<h1 class="edit-title">Profil utilisateur</h1>
+  <h1 class="edit-title">Profil utilisateur</h1>
 
   <div class="title-line">
     <div class="title-dot"></div>
   </div>
 
-<div class="profil">
-  <div class= 'index-subtitle'>Nom
-  <%= current_user.name %>
-  </div>
+  <div class="profil-container">
+    <div class="top-profil">
+      <div class= 'index-subtitle'>Bonjour <%= current_user.name %></div>
 
-  <div class= 'index-subtitle'>
-  <p>Boissons à écarter</p>
-  </div>
+      <p class='index-subtitle'>Boissons à écarter</p>
 
-  <div class="beer">
-    <div class="button">
-      <%= submit_tag 'Bière' %>
-    </div>
-    <div class="option-wrapper">
-      <%= link_to 'Blanche', user_categories_path(category: "Bière", name: "Blanche"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id: "blanche" %>
-      <%= link_to 'Blonde', user_categories_path(category: "Bière", name: "Blonde"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id:"blonde"   %>
-      <%= link_to 'Ambrée', user_categories_path(category: "Bière", name: "Ambrée"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "ambrée"  %>
-      <%= link_to 'Brune', user_categories_path(category: "Bière", name: "Brune"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "brune"  %>
-      <%= link_to 'Noire', user_categories_path(category: "Bière", name: "Noire"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "noire"  %>
-      <%= link_to 'Fruits', user_categories_path(category: "Bière", name: "Fruits"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "fruits"  %>
+      <div class="search-form-wrapper">
+        <div class="beer dropdown">
+          <button class="dropdown-toggle toggle-input" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Bière
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11" viewBox="0 0 16 11" fill="none">
+                <path d="M6.98486 9.74365L0.344238 3.10303C-0.114746 2.64404 -0.114746 1.90186 0.344238 1.44775L1.44775 0.344238C1.90674 -0.114746 2.64893 -0.114746 3.10303 0.344238L7.81006 5.05127L12.5171 0.344238C12.9761 -0.114746 13.7183 -0.114746 14.1724 0.344238L15.2759 1.44775C15.7349 1.90674 15.7349 2.64893 15.2759 3.10303L8.63525 9.74365C8.18604 10.2026 7.44385 10.2026 6.98486 9.74365Z" fill="black"/>
+              </svg>
+            </span>
+          </button>
+
+          <div class="dropdown-menu option-container">
+            <div class="option-wrapper">
+              <%= link_to 'Blanche', user_categories_path(category: "Bière", name: "Blanche"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id: "blanche" %>
+              <%= link_to 'Blonde', user_categories_path(category: "Bière", name: "Blonde"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id:"blonde"   %>
+              <%= link_to 'Ambrée', user_categories_path(category: "Bière", name: "Ambrée"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "ambrée"  %>
+              <%= link_to 'Brune', user_categories_path(category: "Bière", name: "Brune"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "brune"  %>
+              <%= link_to 'Noire', user_categories_path(category: "Bière", name: "Noire"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "noire"  %>
+              <%= link_to 'Fruits', user_categories_path(category: "Bière", name: "Fruits"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "fruits"  %>
+            </div>
+          </div>
+        </div>
       </div>
-  </div>
 
-  <div class="wine">
+      <div class="search-form-wrapper">
+        <div class="wine dropdown">
+          <button class="dropdown-toggle toggle-input" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Vin
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11" viewBox="0 0 16 11" fill="none">
+                  <path d="M6.98486 9.74365L0.344238 3.10303C-0.114746 2.64404 -0.114746 1.90186 0.344238 1.44775L1.44775 0.344238C1.90674 -0.114746 2.64893 -0.114746 3.10303 0.344238L7.81006 5.05127L12.5171 0.344238C12.9761 -0.114746 13.7183 -0.114746 14.1724 0.344238L15.2759 1.44775C15.7349 1.90674 15.7349 2.64893 15.2759 3.10303L8.63525 9.74365C8.18604 10.2026 7.44385 10.2026 6.98486 9.74365Z" fill="black"/>
+                </svg>
+              </span>
+          </button>
+
+          <div class="dropdown-menu option-container">
+            <div class="option-wrapper">
+              <%= link_to 'Blanc', user_categories_path(category: "Vin", name: "Blanc"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "blanc"  %>
+              <%= link_to 'Rosé', user_categories_path(category: "Vin", name: "Rosé"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "rosé"  %>
+              <%= link_to 'Rouge', user_categories_path(category: "Vin", name: "Rouge"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "rouge"  %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="button">
-      <%= submit_tag 'Vin' %>
-    </div>
-    <div class="option-wrapper">
-      <%= link_to 'Blanc', user_categories_path(category: "Vin", name: "Blanc"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "blanc"  %>
-      <%= link_to 'Rosé', user_categories_path(category: "Vin", name: "Rosé"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "rosé"  %>
-      <%= link_to 'Rouge', user_categories_path(category: "Vin", name: "Rouge"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "rouge"  %>
+      <%= submit_tag 'VALIDER', class: 'search-btn'%>
     </div>
   </div>
-
-  <div class="button">
-    <%= submit_tag 'VALIDER', class: 'search-btn'%>
-  </div>
-</div>
 </div>
