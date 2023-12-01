@@ -1,13 +1,13 @@
 class CategoriesController < ApplicationController
 
     def index
-      # raise
 
       # je dois recuperer tous les pairings => @user_parings
       @user_pairings = Pairing.where(user: current_user)
 
       @category = Category.find(params[:category_id])
 
+      # raise
       # si params second_category_id is empty ou nil alors on ira chercher autre chose
       # if @second_category = params[:second_category_id].nil?
 
@@ -40,7 +40,7 @@ class CategoriesController < ApplicationController
   private
 
   def categories_params
-    params.require(:categories).permit(:name, :category_id, photos: [])
+    params.require(:categories).permit(:name, :category_id, :photo)
   end
 
 end

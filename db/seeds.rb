@@ -50,43 +50,43 @@ beer13 = Drink.create!(name: "Barley Wine", description: "Egalement appelée 'vi
 # PHOTOS BEERS
 puts "Photos"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363620/Bi%C3%A8re_blanche_verre_droit_hdnibr.jpg")
-beer1.photos.attach(io: file, filename: "Witbier", content_type: "image/jpg")
+beer1.photo.attach(io: file, filename: "Witbier", content_type: "image/jpg")
 beer1.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/Bi%C3%A8re_gueuze_verre_%C3%A0_pied_gz7ipj.jpg")
-beer2.photos.attach(io: file, filename: "Gueuze", content_type: "image/jpg")
+beer2.photo.attach(io: file, filename: "Gueuze", content_type: "image/jpg")
 beer2.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363620/Bi%C3%A8re_Oud_Bruin_dans_un_verre_ballon_l6zx9n.jpg")
-beer3.photos.attach(io: file, filename: "Oud Bruin", content_type: "image/jpg")
+beer3.photo.attach(io: file, filename: "Oud Bruin", content_type: "image/jpg")
 beer3.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/Bi%C3%A8re_blonde_l%C3%A9g%C3%A8re_pinte_hejkxx.jpg")
-beer4.photos.attach(io: file, filename: "Belgian Gold Strong Ale", content_type: "image/jpg")
+beer4.photo.attach(io: file, filename: "Belgian Gold Strong Ale", content_type: "image/jpg")
 beer4.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363620/Bi%C3%A8re_ambr%C3%A9e_verre_tulipe_md63yg.jpg")
-beer5.photos.attach(io: file, filename: "Triple Belge", content_type: "image/jpg")
+beer5.photo.attach(io: file, filename: "Triple Belge", content_type: "image/jpg")
 beer5.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/Bi%C3%A8re_blonde_de_garde_xo5zjb.jpg")
-beer6.photos.attach(io: file, filename: "Bière de garde", content_type: "image/jpg")
+beer6.photo.attach(io: file, filename: "Bière de garde", content_type: "image/jpg")
 beer6.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/Bi%C3%A8re_blonde_de_garde_xo5zjb.jpg")
-beer7.photos.attach(io: file, filename: "Saison", content_type: "image/jpg")
+beer7.photo.attach(io: file, filename: "Saison", content_type: "image/jpg")
 beer7.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363620/Bi%C3%A8re_ambr%C3%A9e_verre_tulipe_md63yg.jpg")
-beer8.photos.attach(io: file, filename: "Amber Ale", content_type: "image/jpg")
+beer8.photo.attach(io: file, filename: "Amber Ale", content_type: "image/jpg")
 beer8.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363620/Bi%C3%A8re_belgian_dark_strong_ale_quh7wg.jpg")
-beer9.photos.attach(io: file, filename: "Belgian Dark Strong Ale", content_type: "image/jpg")
+beer9.photo.attach(io: file, filename: "Belgian Dark Strong Ale", content_type: "image/jpg")
 beer9.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363620/Bi%C3%A8re_noire_stout_pinte_ksdpve.jpg")
-beer10.photos.attach(io: file, filename: "Stout", content_type: "image/jpg")
+beer10.photo.attach(io: file, filename: "Stout", content_type: "image/jpg")
 beer10.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/Bi%C3%A8re_blonde_l%C3%A9g%C3%A8re_pinte_hejkxx.jpg")
-beer11.photos.attach(io: file, filename: "NEIPA", content_type: "image/jpg")
+beer11.photo.attach(io: file, filename: "NEIPA", content_type: "image/jpg")
 beer11.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/Bi%C3%A8re_blonde_l%C3%A9g%C3%A8re_pinte_hejkxx.jpg")
-beer12.photos.attach(io: file, filename: "IPA", content_type: "image/jpg")
+beer12.photo.attach(io: file, filename: "IPA", content_type: "image/jpg")
 beer12.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/bi%C3%A8re_barley_wine_xjp8n9.png")
-beer13.photos.attach(io: file, filename: "Barley Wine", content_type: "image/jpg")
+beer13.photo.attach(io: file, filename: "Barley Wine", content_type: "image/jpg")
 beer13.save
 
 
@@ -106,40 +106,40 @@ wine10 = Drink.create!(name: "Condrieu", grape: "Viognier", description: "Vin bl
 wine11 = Drink.create!(name: "Saint-Amour", grape: "Gamay", description: "Léger, fin et soyeux", origin: "Beaujolais", color: "Vin rouge concentré, à boire jeune", flavor: "Bonbon acidulé ▪ Fruits rouges")
 
 
-# PHOTOS WINES
-puts "Photos"
+# photo WINES
+puts "photo"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371347/vin_rouge_3_ifi2nq.jpg")
-wine1.photos.attach(io: file, filename: "Pauillac", content_type: "image/jpg")
+wine1.photo.attach(io: file, filename: "Pauillac", content_type: "image/jpg")
 wine1.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371225/vin_blanc_4_eozuay.jpg")
-wine2.photos.attach(io: file, filename: "Sauternes", content_type: "image/jpg")
+wine2.photo.attach(io: file, filename: "Sauternes", content_type: "image/jpg")
 wine2.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371220/vin_rouge_2_zrjzad.jpg")
-wine3.photos.attach(io: file, filename: "Pommard", content_type: "image/jpg")
+wine3.photo.attach(io: file, filename: "Pommard", content_type: "image/jpg")
 wine3.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371216/vin_blanc_2_lyepyf.jpg")
-wine4.photos.attach(io: file, filename: "Sancerre", content_type: "image/jpg")
+wine4.photo.attach(io: file, filename: "Sancerre", content_type: "image/jpg")
 wine4.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371216/vin_blanc_2_lyepyf.jpg")
-wine5.photos.attach(io: file, filename: "Riesling", content_type: "image/jpg")
+wine5.photo.attach(io: file, filename: "Riesling", content_type: "image/jpg")
 wine5.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371217/vin_rouge_1_vk59cb.jpg")
-wine6.photos.attach(io: file, filename: "Chinon", content_type: "image/jpg")
+wine6.photo.attach(io: file, filename: "Chinon", content_type: "image/jpg")
 wine6.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371216/vin_blanc_2_lyepyf.jpg")
-wine7.photos.attach(io: file, filename: "Muscadet", content_type: "image/jpg")
+wine7.photo.attach(io: file, filename: "Muscadet", content_type: "image/jpg")
 wine7.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371216/vin_blanc_2_lyepyf.jpg")
-wine8.photos.attach(io: file, filename: "Savennières", content_type: "image/jpg")
+wine8.photo.attach(io: file, filename: "Savennières", content_type: "image/jpg")
 wine8.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371206/vin_rouge_vtjiaj.jpg")
-wine9.photos.attach(io: file, filename: "Saint-Joseph", content_type: "image/jpg")
+wine9.photo.attach(io: file, filename: "Saint-Joseph", content_type: "image/jpg")
 wine9.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371199/vin_blanc_huosme.jpg")
-wine10.photos.attach(io: file, filename: "Condrieu", content_type: "image/jpg")
+wine10.photo.attach(io: file, filename: "Condrieu", content_type: "image/jpg")
 wine10.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371206/vin_rouge_vtjiaj.jpg")
-wine11.photos.attach(io: file, filename: "Saint-Amour", content_type: "image/jpg")
+wine11.photo.attach(io: file, filename: "Saint-Amour", content_type: "image/jpg")
 wine11.save
 
 
@@ -167,8 +167,8 @@ cheese6 = Food.create!(name: "Saint-Nectaire", family: "Fromage à pâte pressé
 cheese7 = Food.create!(name: "Bleu d'Auvergne", family: "Fromage à pâte persillé", description: "Saveur légèrement salée et texture fondante", category_id: category3.id, strength: "Fort", milk: "Vache", aging: "Vieux", origin: "Puy de Dôme")
 cheese8 = Food.create!(name: "Roquefort", family: "Fromage à pâte persillé", description: "", category_id: category3.id, strength: "Saveur franche, fraîche, fine et prononcée", milk: "Brebis", aging: "Jeune", origin: "Aveyron")
 
-# PHOTOS CHEESES
-puts "Photos"
+# photo CHEESES
+puts "photo"
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376099/brie%20de%20meaux.jpg")
 cheese1.photo.attach(io: file, filename: "Brie de Meaux jeune", content_type: "image/jpg")
 cheese1.save
