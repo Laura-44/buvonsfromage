@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :pairings
   has_many :user_categories
+  has_many_attached :photos
   validates :name, presence: true
 end
