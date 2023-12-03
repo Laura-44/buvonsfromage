@@ -1,5 +1,9 @@
 #red-navbar {
   background-color: $red;
+  .navbar-color.active {
+    color: $red;
+    text-decoration: none;
+  }
 }
 
 #index-pairings {

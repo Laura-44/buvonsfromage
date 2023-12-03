@@ -1,5 +1,9 @@
 #blue-navbar {
   background-color: $blue;
+  .navbar-color.active {
+    color: $blue;
+    text-decoration: none;
+  }
 }
 
 #edit-profiles {

@@ -20,6 +20,7 @@
 
 .nav-item {
   border: 1px solid white;
+  display: contents;
 }
 
 .dropdown-item {
@@ -42,3 +43,11 @@
   transition: transform 0.3s ease-in-out;
 }
 
+.navbar-color {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-container.active {
+  background-color: black;
+}

@@ -1,5 +1,9 @@
 #purple-navbar {
   background-color: $purple;
+  .navbar-color.active {
+    color: $purple;
+    text-decoration: none;
+  }
 }
 
 #index-foods {
