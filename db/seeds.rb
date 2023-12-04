@@ -152,9 +152,30 @@ puts "categories"
 # CATEGORIE_DRINKS
 puts "categorie_drinks"
 
-categorie_drink1 = CategorieDrink.create!(name: "Blonde", category_id: category1.id, drink_id: beer1.id)
-categorie_drink2 = CategorieDrink.create!(name: "Brune/Noire", category_id: category1.id, drink_id: beer2.id)
-categorie_drink3 = CategorieDrink.create!(name: "Ambrée", category_id: category1.id, drink_id: beer4.id)
+categorie_drink1 = CategorieDrink.create!(name: "Blanche", category_id: category1.id, drink_id: beer1.id)
+categorie_drink2 = CategorieDrink.create!(name: "Blonde", category_id: category1.id, drink_id: beer2.id)
+categorie_drink3 = CategorieDrink.create!(name: "Brune", category_id: category1.id, drink_id: beer3.id)
+categorie_drink4 = CategorieDrink.create!(name: "Blonde", category_id: category1.id, drink_id: beer4.id)
+categorie_drink5 = CategorieDrink.create!(name: "Blonde", category_id: category1.id, drink_id: beer5.id)
+categorie_drink6 = CategorieDrink.create!(name: "Ambrée", category_id: category1.id, drink_id: beer6.id)
+categorie_drink7 = CategorieDrink.create!(name: "Blonde", category_id: category1.id, drink_id: beer7.id)
+categorie_drink8 = CategorieDrink.create!(name: "Ambrée", category_id: category1.id, drink_id: beer8.id)
+categorie_drink9 = CategorieDrink.create!(name: "Brune", category_id: category1.id, drink_id: beer9.id)
+categorie_drink10 = CategorieDrink.create!(name: "Noire", category_id: category1.id, drink_id: beer10.id)
+categorie_drink11 = CategorieDrink.create!(name: "Blonde", category_id: category1.id, drink_id: beer11.id)
+categorie_drink12 = CategorieDrink.create!(name: "Blonde", category_id: category1.id, drink_id: beer12.id)
+categorie_drink13 = CategorieDrink.create!(name: "Ambrée", category_id: category1.id, drink_id: beer13.id)
+categorie_drink14 = CategorieDrink.create!(name: "Rouge", category_id: category2.id, drink_id: wine1.id)
+categorie_drink15 = CategorieDrink.create!(name: "Blanc", category_id: category2.id, drink_id: wine2.id)
+categorie_drink16 = CategorieDrink.create!(name: "Rouge", category_id: category2.id, drink_id: wine3.id)
+categorie_drink17 = CategorieDrink.create!(name: "Blanc", category_id: category2.id, drink_id: wine4.id)
+categorie_drink18 = CategorieDrink.create!(name: "Blanc", category_id: category2.id, drink_id: wine5.id)
+categorie_drink19 = CategorieDrink.create!(name: "Rouge", category_id: category2.id, drink_id: wine6.id)
+categorie_drink20 = CategorieDrink.create!(name: "Blanc", category_id: category2.id, drink_id: wine7.id)
+categorie_drink21 = CategorieDrink.create!(name: "Blanc", category_id: category2.id, drink_id: wine8.id)
+categorie_drink22 = CategorieDrink.create!(name: "Rouge", category_id: category2.id, drink_id: wine9.id)
+categorie_drink23 = CategorieDrink.create!(name: "Blanc", category_id: category2.id, drink_id: wine10.id)
+categorie_drink24 = CategorieDrink.create!(name: "Rouge", category_id: category2.id, drink_id: wine11.id)
 # FOODS
 puts "cheese"
 
