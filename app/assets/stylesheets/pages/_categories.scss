@@ -1,17 +1,49 @@
 #orange-navbar {
   background-color: $orange;
   .navbar-container.active {
-    color: $orange;
+    color: $orange-bf;
     text-decoration: none;
   }
 }
 
 #index-categories {
-  background-color: $orange;
-  height: 100dvh;
+  background-color: $orange-bf;
   width: 100%;
+  min-height: 100dvh;
   padding: 70px 25px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+.pairing-wrapper {
+  position: relative;
+}
+.pairing {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.choice-img {
+  width: 100%;
+}
+.choice-name {
+  background: white;
+  color: $orange-bf;
+  width: 100%;
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 5px;
+  // width: 190px;
+  // height: 30px;
+}
+.choice-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

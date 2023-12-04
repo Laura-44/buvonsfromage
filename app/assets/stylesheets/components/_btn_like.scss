@@ -1,0 +1,16 @@
+.like_container {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background-color: white; /* ou toute autre couleur de votre choix */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.like_heart {
+  // solar:heart-bold
+  width: 35px;
+  height: 35px;
+  color: $orange-bf
+}

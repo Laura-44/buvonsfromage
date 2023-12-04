@@ -1,0 +1,17 @@
+.unlike_container {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background-color: black;
+  opacity: 80%; /* ou toute autre couleur de votre choix */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.unlike_heart {
+  // ion: heart-dislike
+  width: 35px;
+  height: 35px;
+  color: white;
+}
