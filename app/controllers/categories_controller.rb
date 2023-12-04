@@ -18,10 +18,15 @@ class CategoriesController < ApplicationController
       @second_category = params[:second_category_id].nil? ? nil : Category.find(params[:second_category_id])
       if @category.name == "Fromage"
         @choices = Category.find_by(name: "Bière").drinks
+        @choices = Category.find_by(name: "Wine").drinks
 
         # TODO enlver tous les drinks qui on un pairings (le drink en question a un pairing avec un fromage)
+        @choices = @choices.select do |choice|
+          !choice.pairings.ids.any? do |pairing_id|
+            @user_pairings.ids.include?(pairing_id)
+          end
+        end
 
-        # @choices = Category.find_by(name: "Wine").drinks
       else
 
         @choices = Category.find_by(name: "Fromage").foods
