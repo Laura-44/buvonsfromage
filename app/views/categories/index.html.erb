@@ -3,6 +3,15 @@
 </div>
 <div id="index-categories">
   <%= @category.name %>
+  <% if @category.name == "Fromage" %>
+    <%= cl_image_tag @cheese.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2" %>
+  <% elsif @category.name == "Bière" %>
+    <%= cl_image_tag @beer_category.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2" %>
+  <% else %>
+    <%= cl_image_tag @wine_category.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2" %>
+  <% end %>
+
+
   <% @choices.each do |choice| %>
     <%# <% choice.photo.each do |photo| %>
       <%= cl_image_tag choice.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2" %>
