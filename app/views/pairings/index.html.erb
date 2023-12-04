@@ -1,0 +1,15 @@
+<div id="red-navbar">
+  <%= render "shared/navbar" %>
+</div>
+<div id="index-pairings">
+  <h1 class="index-title">Vos matchs</h1>
+  <div class="title-line">
+    <div class="title-dot"></div>
+  </div>
+
+  <div class="matchs-container" >
+    <% @pairings.each do |pairing| %>
+    <%= cl_image_tag pairing.food.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+#orange-navbar {
+  background-color: $orange;
+  .navbar-color.active {
+    color: $orange;
+    text-decoration: none;
+  }
+}
+
+#index-categories {
+  background-color: $orange;
+  height: 100dvh;
+  width: 100%;
+  padding: 70px 25px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

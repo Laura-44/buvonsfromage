@@ -1,4 +1,8 @@
 class PairingsController < ApplicationController
+  def index
+    # @reservations = Reservation.all
+    @pairings = Pairing.all
+  end
 
   def new
     @pairing = Pairing.new
@@ -15,17 +19,14 @@ class PairingsController < ApplicationController
     @pairing.food = @food = Food.find(params[:pairing][:food_id])
     @pairing.user = current_user
     @pairing.save!
-    # raise
-    redirect_to categories_path({second_category_id: @second_category.id ,category_id:@category.id})
+    redirect_to categories_path({ second_category_id: @second_category.id, category_id: @category.id })
   end
-
 
   private
 
   def pairings_params
     params.require(:pairing).permit(:food_id, :drink_id)
   end
-
 end
 
 # redirect_to pairing_path(@pairing) : doit renvoyer à la page des pairings cad du "panier"

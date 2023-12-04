@@ -7,6 +7,6 @@ export default class extends Controller {
   }
   display(event) {
     event.preventDefault;
-    console.log("coucou");
+    // console.log("coucou");
   }
 }
