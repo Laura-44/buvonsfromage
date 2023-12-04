@@ -1,7 +1,29 @@
-<%= render "shared/navbar" %>
-<%= @drink.name %>
-<%= @drink.color %>
-<%= @drink.grape %>
-<%= @drink.origin %>
-<%= @drink.description %>
-<%= link_to 'TROUVER', drinks_path %> <%# la route n'est pas la bonne %>
+<div id="black-navbar">
+  <%= render "shared/navbar" %>
+</div>
+
+<div id="show-drink">
+  <div class= "show-image">
+    <%= cl_image_tag @drink.photo.key, height: 300, width: 400, crop: :fill %>
+    <div class="linear-img"></div>
+  </div>
+
+  <div class="content-show">
+    <h1 class= "show-name text-center"><%= @drink.name %></h1>
+    <div class= "container">
+      <div class= "show-category m-1">
+        <p class= "show-color text-center m-1"><%= @drink.color %></p>
+        <p class= "show-grape text-center m-1"><%= @drink.grape %></p>
+        <p class= "show-origin text-center m-1"><%= @drink.origin %></p>
+      </div>
+      <p class= "show-description text-center m-4"><%= @drink.description %></p>
+      <%# <%= link_to 'TROUVER', drinks_path %>
+
+      <div class="button d-grid gap-3">
+        <%= link_to 'TROUVER', foods_path, class: 'search-btn text-center' %>
+        <%# <%= submit_tag 'TROUVER', class: 'search-btn'%>
+      </div>
+    </div>
+  </div>
+</div>
+<%# linear gradiant %>
