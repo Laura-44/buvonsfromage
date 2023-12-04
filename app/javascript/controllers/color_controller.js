@@ -11,6 +11,6 @@ export default class extends Controller {
     // console.log("coucou");
     event.preventDefault()
     this.activeColorTarget.classList.toggle("active")
-    console.log("coucou");
+    // console.log("coucou");
   }
 }
