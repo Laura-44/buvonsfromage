@@ -1,31 +1,29 @@
 <div id="orange-navbar">
   <%= render "shared/navbar" %>
 </div>
+
 <div id="index-categories">
   <%= @category.name %>
   <% if @category.name == "Fromage" %>
-    <%= cl_image_tag @cheese.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2" %>
+    <%= cl_image_tag @cheese.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
   <% elsif @category.name == "Bière" %>
-    <%= cl_image_tag @beer_category.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2" %>
+    <%= cl_image_tag @beer_category.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
   <% else %>
-    <%= cl_image_tag @wine_category.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2" %>
+    <%= cl_image_tag @wine_category.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
   <% end %>
 
-
-  <% @choices.each do |choice| %>
-    <%# <% choice.photo.each do |photo| %>
-      <%= cl_image_tag choice.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2" %>
-    <%# <% end %>
-
+  <div class="pairing-wrapper">
+    <% @choices.each do |choice| %>
       <div class="pairing" data-controller="pairing">
         <%= simple_form_for Pairing.new do |f| %>
-          <%= choice.name %>
+          <%= cl_image_tag choice.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
+
           <div class="d-none">
             <% if @category.name == "Fromage" %>
               <%= f.input :drink_id, value: choice.id %>
               <%= f.hidden_field :food_id, value: @category.foods.sample.id %>
             <% else %>
-            <% drink =  @category.drinks.sample%>
+              <% drink =  @category.drinks.sample%>
               <%= f.input :food_id, input_html: {value: choice.id} %>
               <%= f.hidden_field :drink_id, value: drink.id %>
               <%# <% raise %>
@@ -39,20 +37,26 @@
               <%# <% end %>
             <% end %>
           </div>
-            <%= f.hidden_field :category_id, value: @category.id %>
-              <%= f.hidden_field :second_category_id, value: @second_category.id%>
 
-            <%= f.submit "Je valide" %>
+          <%= f.hidden_field :category_id, value: @category.id %>
+          <%= f.hidden_field :second_category_id, value: @second_category.id%>
+
+          <% if @category.name == "Fromage" %>
+            <%= link_to choice.name, drink_path(choice.id), class:"choice-name" %>
+          <% else %>
+            <%= link_to choice.name, food_path(choice.id), class:"choice-name" %>
+          <% end %>
+
+          <div class="choice-btn">
+            <div class="unlike_btn">
+              <%= link_to "X", categories_path(@categories) %>
+            </div>
+            <div class="like_btn">
+              <%= f.submit "Je valide" %>
+            </div>
+          </div>
         <% end %>
-        <%= link_to "X", categories_path(@categories) %>
-
-
-        <% if @category.name == "Fromage" %>
-            <%= link_to "Description", drink_path(choice.id) %>
-        <% else %>
-            <%= link_to "Description", food_path(choice.id) %>
-        <% end %>
-
+      </div>
       <%# <%= link_to "Description", food_path %>
       <%# <%= link_to "Description", drink_path %>
     <% end %>

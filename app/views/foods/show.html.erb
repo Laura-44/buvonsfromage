@@ -3,15 +3,26 @@
 </div>
 
 <div id="show-food">
-  <%= cl_image_tag @food.photo.key, height: 300, width: 400, crop: :fill %>
-  <%= @food.name %>
-  <%= @food.milk %>
-  <%= @food.aging %>
-  <%= @food.origin %>
-  <%= @food.description %>
-  <%= link_to 'TROUVER', foods_path %> <%# la route n'est pas la bonne %>
+  <div class= "show-image">
+    <%= cl_image_tag @food.photo.key, height: 300, width: 400, crop: :fill %>
+    <div class="linear-img"></div>
+  </div>
 
-  <div class="button">
-    <%= submit_tag 'COMMENCER', class: 'search-btn'%>
+  <div class="content-show">
+    <h1 class= "show-name text-center"><%= @food.name %></h1>
+    <div class= "container">
+      <div class= "show-category m-1">
+        <p class= "show-milk text-center m-1"><%= @food.milk %></p>
+        <p class= "show-aging text-center m-1"><%= @food.aging %></p>
+        <p class= "show-origin text-center m-1"><%= @food.origin %></p>
+      </div>
+      <p class= "show-description text-center m-4"><%= @food.description %></p>
+      <%# <%= link_to 'TROUVER', foods_path %>
+
+      <div class="button d-grid gap-3">
+        <%# <%= submit_tag 'TROUVER', class: 'search-btn'%>
+        <%= link_to 'TROUVER', foods_path, class: 'search-btn text-center' %>
+      </div>
+    </div>
   </div>
 </div>
