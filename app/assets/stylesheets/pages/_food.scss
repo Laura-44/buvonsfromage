@@ -1,17 +1,45 @@
 #black-navbar {
-  background-color: black;
+  background-color: $gray-bf;
 }
 
-#show-food{
-  background-color: $gray;
+#show-food,
+#show-drink {
+  background-color: $gray-bf;
   height: 100dvh;
   width: 100%;
-  padding: 70px 25px;
+  padding: 0 25px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   color: white;
 }
+
+.show-image {
+  min-height: 300px;
+
+  .linear-img {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    left: 0%;
+    z-index: 2;
+    background: linear-gradient(180deg, #303030 4.73%, rgba(48, 48, 48, 0.10) 10.86%, rgba(48, 48, 48, 0.10) 32.78%, #303030 90.37%);
+  }
+
+  img {
+    width: 100%;
+    position: absolute;
+    left: 0%;
+  }
+}
+
+// .show-name {
+//   margin-top: -15px;
+//   background-color: $gray-bf;
+//   width: 100%;
+//   height: 40px;
+//   opacity: 80%;
+// }
 
 .search-btn {
   background-color: #ffffff;
@@ -20,7 +48,7 @@
   height: 62px;
   padding: 15px 16px;
   border-radius: 46px;
-  color: $blue;
+  color: $gray-bf;
   font-size: 20px;
   font-style: normal;
   font-weight: 900;
