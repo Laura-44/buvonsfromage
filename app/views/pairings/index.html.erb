@@ -9,7 +9,10 @@
 
   <div class="matchs-container" >
     <% @pairings.each do |pairing| %>
+    <div class="matchs-images">
     <%= cl_image_tag pairing.food.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2" %>
+    <%= cl_image_tag pairing.drink.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2" %>
+    </div>
     <% end %>
   </div>
 </div>
