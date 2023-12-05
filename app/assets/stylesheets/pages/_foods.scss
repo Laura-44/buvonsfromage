@@ -4,6 +4,17 @@
     color: $purple;
     text-decoration: none;
   }
+
+  .nav-item:has(.nav-link.show) .bg-menu {
+    display: block;
+    width: 100%;
+    height: calc(100dvh - 54px);
+    background-color: $purple;
+    position: absolute;
+    top: 56px;
+    left: -70px;
+    z-index: 5;
+  }
 }
 
 #index-foods {

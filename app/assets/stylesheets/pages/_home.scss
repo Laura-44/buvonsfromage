@@ -1,4 +1,17 @@
 // Specific CSS for your home-page
+
+#home-navbar {
+  background-color: $blue-bf;
+  .navbar-color.active {
+    color: $blue-bf;
+    text-decoration: none;
+  }
+
+  .bars {
+    display: none;
+  }
+}
+
 .index-home {
   color: #FFF;
   font-family: Poller One;

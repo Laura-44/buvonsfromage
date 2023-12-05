@@ -1,17 +1,18 @@
+<div id="home-navbar">
+  <%= render "shared/navbar" %>
+</div>
 <div id="home">
-
   <div class="center-image">
-      <%= image_tag("logo_buvons_fromage.png", alt: "Logo") %>
-  <div class="category-form">
-    <div class="button">
-      <%= link_to "COMMENCER", foods_path, class: "search-btn" %>
-          <%# <%= submit_tag 'COMMENCER', class: 'search-btn' %>
-    </div>
-
-    <div class="center-gif">
-      <%= image_tag("bandeau_home.gif", style: "margin-right: -10px; margin-left: -10px", alt: "Gif home") %>
-    </div>
-
+    <%= image_tag("logo_buvons_fromage.png", alt: "Logo") %>
+    <div class="category-form">
+      <div class="button">
+        <%= link_to "COMMENCER", foods_path, class: "search-btn" %>
+        <%# <%= submit_tag 'COMMENCER', class: 'search-btn' %>
+      </div>
+      <div class="center-gif">
+        <%= image_tag("bandeau_home.gif", style: "margin-right: -10px; margin-left: -10px", alt: "Gif home") %>
+      </div>
       <%= submit_tag 'COMMENCER', class: 'search-btn' %>
-
+    </div>
+  </div>
 </div>

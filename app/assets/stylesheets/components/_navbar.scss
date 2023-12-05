@@ -30,16 +30,7 @@
 .nav-item:has(.nav-link) .bg-menu {
   display: none;
 }
-.nav-item:has(.nav-link.show) .bg-menu {
-  display: block;
-  width: 100%;
-  height: calc(100dvh - 54px);
-  background-color: #7C4196;
-  position: absolute;
-  top: 56px;
-  left: -70px;
-  z-index: 5;
-}
+
 
 .navbar-collapse {
   position: fixed;
@@ -59,7 +50,7 @@
 }
 
 .navbar-container.active {
-  background-color: black;
+  background-color: $gray-bf;
   margin-left: 70px;
 
   .icon-glass {
@@ -93,11 +84,11 @@ ul.dropdown-menu.show {
 }
 
 .link-cart.active a {
-  color: $red
+  color: $red-bf
 }
 
 .link-profil.active a {
-  color: $blue
+  color: $blue-bf
 }
 
 .bars {
