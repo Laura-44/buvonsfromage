@@ -27,12 +27,12 @@
 
             <div class="dropdown-menu option-container">
               <div class="option-wrapper">
-                <%= link_to 'Blanche', user_categories_path(category: "Bière", name: "Blanche"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id: "blanche" %>
-                <%= link_to 'Blonde', user_categories_path(category: "Bière", name: "Blonde"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id:"blonde"   %>
-                <%= link_to 'Ambrée', user_categories_path(category: "Bière", name: "Ambrée"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "ambrée"  %>
-                <%= link_to 'Brune', user_categories_path(category: "Bière", name: "Brune"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "brune"  %>
-                <%= link_to 'Noire', user_categories_path(category: "Bière", name: "Noire"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "noire"  %>
-                <%= link_to 'Fruits', user_categories_path(category: "Bière", name: "Fruits"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "fruits"  %>
+                <%= link_to 'Blanche', user_categories_path(category: "Bière", name: "Blanche"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id: "blanche", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Blanche')}" %>
+                <%= link_to 'Blonde', user_categories_path(category: "Bière", name: "Blonde"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id:"blonde", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Blonde')}" %>
+                <%= link_to 'Ambrée', user_categories_path(category: "Bière", name: "Ambrée"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "ambrée", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Ambrée')}" %>
+                <%= link_to 'Brune', user_categories_path(category: "Bière", name: "Brune"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "brune", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Brune')}" %>
+                <%= link_to 'Noire', user_categories_path(category: "Bière", name: "Noire"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "noire", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Noire')}" %>
+                <%= link_to 'Fruits', user_categories_path(category: "Bière", name: "Fruits"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "fruits", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Fruits')}" %>
               </div>
             </div>
           </div>
@@ -51,9 +51,9 @@
 
             <div class="dropdown-menu option-container">
               <div class="option-wrapper">
-                <%= link_to 'Blanc', user_categories_path(category: "Vin", name: "Blanc"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "blanc"  %>
-                <%= link_to 'Rosé', user_categories_path(category: "Vin", name: "Rosé"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "rosé"  %>
-                <%= link_to 'Rouge', user_categories_path(category: "Vin", name: "Rouge"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "rouge"  %>
+                <%= link_to 'Blanc', user_categories_path(category: "Vin", name: "Blanc"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "blanc", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Blanc')}"  %>
+                <%= link_to 'Rosé', user_categories_path(category: "Vin", name: "Rosé"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "rosé", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Rosé')}"  %>
+                <%= link_to 'Rouge', user_categories_path(category: "Vin", name: "Rouge"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "rouge", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Rouge')}"  %>
               </div>
             </div>
           </div>

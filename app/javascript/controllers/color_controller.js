@@ -9,7 +9,7 @@ export default class extends Controller {
 
   displayColor(event) {
     // console.log("coucou");
-    event.preventDefault()
+    // event.preventDefault()
     this.activeColorTarget.classList.toggle("active")
     // console.log("coucou");
   }

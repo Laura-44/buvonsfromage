@@ -10,18 +10,13 @@ class UserCategoriesController < ApplicationController
 
   def create
     @category = Category.find_by(name: params[:category])
-    raise
     @user_category = UserCategory.find_by(category: @category, user: current_user, name: params[:name])
     if @user_category.nil?
-      @user_category = UserCategory.create(name: params[:name], user: current_user, category: @category)
+      @user_category = UserCategory.create!(name: params[:name], user: current_user, category: @category)
     else
       @user_category.destroy
     end
-    # @user_category.save
-    # raise
-    # redirect_to user_category_path(@user_category)
-    # Utilisez user_category_path avec l'ID de la nouvelle catégorie
-    redirect_to edit_profiles_path
+    # redirect_to edit_profiles_path
   end
 
   # def create
