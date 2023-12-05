@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   resources :categories do
     resources :categorie_drinks
     resources :foods
+    member do
+      patch :dislike
+    end
     # resources :user_categories
   end
 
