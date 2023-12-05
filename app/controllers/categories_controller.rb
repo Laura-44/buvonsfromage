@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
     def index
       # je dois recuperer tous les pairings => @user_parings
       @user_pairings = Pairing.where(user: current_user)
-
+      
       @category = Category.find(params[:category_id])
       @second_category = params[:second_category_id].nil? ? nil : Category.find(params[:second_category_id])
 

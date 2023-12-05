@@ -6,6 +6,16 @@
   <div class= "show-image">
     <%= cl_image_tag @food.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="linear-img"></div>
+    <div class="food-images">
+      <div class="food_fleche">
+        <%= link_to url_for(:back) do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none">
+            <circle cx="22.5" cy="22.5" r="22.5" transform="rotate(90 22.5 22.5)" fill="white"/>
+            <path d="M17.2563 21.9849L23.897 15.3442C24.356 14.8853 25.0981 14.8853 25.5522 15.3442L26.6558 16.4478C27.1147 16.9067 27.1147 17.6489 26.6558 18.103L21.9487 22.8101L26.6558 27.5171C27.1147 27.9761 27.1147 28.7183 26.6558 29.1724L25.5522 30.2759C25.0933 30.7349 24.3511 30.7349 23.897 30.2759L17.2563 23.6353C16.7974 23.186 16.7974 22.4438 17.2563 21.9849Z" fill="#303030"/>
+          </svg>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="content-show">

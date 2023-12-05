@@ -1,16 +1,26 @@
 .like_container {
-  width: 88px;
-  height: 88px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background-color: white; /* ou toute autre couleur de votre choix */
+  background-color: white;
   display: flex;
-  justify-content: center;
   align-items: center;
-}
+  justify-content: center;
 
-.like_heart {
-  // solar:heart-bold
-  width: 35px;
-  height: 35px;
-  color: $orange-bf
+  .svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .svg path {
+    fill: $orange-bf;
+  }
+  .submit_like {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+  }
 }

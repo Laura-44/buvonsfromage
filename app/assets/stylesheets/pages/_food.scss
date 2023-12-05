@@ -33,13 +33,19 @@
   }
 }
 
-// .show-name {
-//   margin-top: -15px;
-//   background-color: $gray-bf;
-//   width: 100%;
-//   height: 40px;
-//   opacity: 80%;
-// }
+.show-name {
+  margin-top: -15px;
+  z-index: 3;
+  position: relative;
+}
+
+.food_fleche {
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-163%, -50%);
+}
 
 .search-btn {
   background-color: #ffffff;
