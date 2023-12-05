@@ -1,13 +1,24 @@
 #blue-navbar {
-  background-color: $blue;
+  background-color: $blue-bf;
   .navbar-color.active {
-    color: $blue;
+    color: $blue-bf;
     text-decoration: none;
+  }
+
+  .nav-item:has(.nav-link.show) .bg-menu {
+    display: block;
+    width: 100%;
+    height: calc(100dvh - 54px);
+    background-color: $blue-bf;
+    position: absolute;
+    top: 56px;
+    left: -70px;
+    z-index: 5;
   }
 }
 
 #edit-profiles {
-  background-color: $blue;
+  background-color: $blue-bf;
   height: 100dvh;
   width: 100%;
   padding: 70px 25px;
