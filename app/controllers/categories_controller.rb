@@ -1,7 +1,6 @@
 class CategoriesController < ApplicationController
 
     def index
-
       # je dois recuperer tous les pairings => @user_parings
       @user_pairings = Pairing.where(user: current_user)
 
