@@ -35,7 +35,11 @@ class FoodsController < ApplicationController
       render json: @second_categorie_drinks
       # redirect_to categories_path
     end
+
     # raise
+    session[:foods_for_wine] = nil
+    session[:foods_for_beer] = nil
+
   end
 
   def show
