@@ -4,6 +4,6 @@ meta_title: “Buvons fromage – Application de foodpairing”
 
 meta_description: “Application qui prend les préférences culinaires de l’utilisateur et qui suggère des correspondances organoleptiques de boissons ou aliments pour qu’ils se marient le mieux ensemble.  ”
 
-meta_image: “cover.png” # should exist in `app/assets/images/`
+meta_image: “cover.png”
 
 # twitter_account: “@product_twitter_account” # required for Twitter Cards

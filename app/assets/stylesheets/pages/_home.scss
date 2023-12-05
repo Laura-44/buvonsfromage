@@ -14,7 +14,7 @@
 
 #home {
   background-color: $gray-bf;
-  height: 100dvh;
+  // height: 100dvh;
   width: 100%;
   padding: 70px 25px;
   display: flex;
@@ -38,11 +38,24 @@
   border: none;
 }
 
-.button {
-  font-size: 16px;
-    margin-bottom: 22px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    color: white;
+// .button {
+//   font-size: 16px;
+//     margin-bottom: 22px;
+//     font-style: normal;
+//     font-weight: 700;
+//     line-height: normal;
+//     color: white;
+// }
+
+.center-gif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.center-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
