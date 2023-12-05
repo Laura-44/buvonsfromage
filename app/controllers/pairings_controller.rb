@@ -2,6 +2,7 @@ class PairingsController < ApplicationController
   def index
     # @reservations = Reservation.all
     @pairings = Pairing.all
+    @matches = Match.all
   end
 
   def new
@@ -30,4 +31,5 @@ class PairingsController < ApplicationController
 end
 
 # redirect_to pairing_path(@pairing) : doit renvoyer à la page des pairings cad du "panier"
+
 # attention : pas de view encore créée pour le pairings controller
