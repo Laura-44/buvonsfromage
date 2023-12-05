@@ -10,6 +10,7 @@ class UserCategoriesController < ApplicationController
 
   def create
     @category = Category.find_by(name: params[:category])
+    raise
     @user_category = UserCategory.find_by(category: @category, user: current_user, name: params[:name])
     if @user_category.nil?
       @user_category = UserCategory.create(name: params[:name], user: current_user, category: @category)

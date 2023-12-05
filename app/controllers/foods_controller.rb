@@ -8,16 +8,20 @@ class FoodsController < ApplicationController
     @second_categorie_drinks = CategorieDrink.all
 
     if params[:category_id]
-      @categorie_drinks = CategorieDrink.where(category_id: params[:category_id])
+      @categorie_drinks = CategorieDrink.where(category_id: params[:category_id]).select(:name).distinct
       render json: @categorie_drinks
       # redirect_to categories_path
     end
 
     if params[:second_category_id]
-      @second_categorie_drinks = CategorieDrink.where(category_id: params[:second_category_id])
+      @second_categorie_drinks = CategorieDrink.where(category_id: params[:second_category_id]).select(:name).distinct
       render json: @second_categorie_drinks
       # redirect_to categories_path
     end
+
+    session[:foods_for_wine] = nil
+    session[:foods_for_beer] = nil
+
   end
 
   def show
