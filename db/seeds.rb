@@ -46,6 +46,9 @@ beer10 = Drink.create!(name: "Stout", description: "Originaire d'Angleterre, la 
 beer11 = Drink.create!(name: "NEIPA", description: "New England IPA. Construite sur l'aromatique sans l'amertume. Peu filtrée pour obtenir une sensation juteuse en bouche. Version très fruitée et trouble de l'IPA.", strength: "4-6% ABV", fermentation: "Ale", color: "Blonde", flavor: "Issu de plusieurs houblonnages à cru massif afin de renforcer les parfums des houblons aromatiques.B ière qui s'apparente beaucoup à un jus de fruit de part ses puissants arômes fruités.")
 beer12 = Drink.create!(name: "IPA", description: "Bière de caractère créée en Angleterre pur pouvoir résister au transport jusqu'aux colonies britanniques (vertus antiseptiques du houblon).", strength: "4-6% ABV", fermentation: "Ale", color: "Blonde", flavor: "Bière très houblonnée avec des arômes floraux, épicés et d'agrûmes")
 beer13 = Drink.create!(name: "Barley Wine", description: "Egalement appelée 'vin d'orge'. Texture presque liquoreuse, jolie couleur cuivrée et une touche de caramel prononcée. A laisser mûrir plusieurs années dans leur bouteille avant de les consommer.", strength: ">9% ABV", fermentation: "Ale", color: "Ambrée", flavor: "On retrouve généralement des touches d'alcool, de caramel, de fruits secs, de pain grillé, de mélasse (mixture issue de la betterave sucrière ou de la canne à sucre).")
+beer14 = Drink.create!(name: "Bière aux fruits (cerise)", description: "En bouche, l’acidité et la sucrosité de la cerise sont les principales saveurs perçues. ", strength: "<4% ABV", fermentation: "Spontannée", color: "Fruits", flavor: "Au nez, on perçoit des arômes de fruits rouges, de cerise en particulier, ainsi que de fraises des bois plus confites.")
+beer15 = Drink.create!(name: "Bière aux fruits (myrtille)", description: "Sur une base de bière blonde légère en alcool, on rajoute en quantité des myrtilles lors de la fermentation.", strength: "<4% ABV", fermentation: "Spontannée", color: "Fruits", flavor: "Profil organoleptique aussi fruité qu'acidulé.")
+beer16 = Drink.create!(name: "Bière aux fruits (pêche)", description: "Il n’y a pas d’amertume mais une fine acidité persiste et nous conduit sur une finale sucrée avec une sensation de sucre candi et de pêche.", strength: "<4% ABV", fermentation: "Spontannée", color: "Fruits", flavor: "Infiniment gourmande, douce et acidulée, cette bière de fermentation spontanée à la robe orangée offre un nez est acide et sucré à la fois.")
 
 # PHOTOS BEERS
 puts "Photos"
@@ -88,22 +91,34 @@ beer12.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/bi%C3%A8re_barley_wine_xjp8n9.png")
 beer13.photo.attach(io: file, filename: "Barley Wine", content_type: "image/jpg")
 beer13.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701812893/Bi%C3%A8re_%C3%A0_la_cerie_zre8fd.jpg")
+beer14.photo.attach(io: file, filename: "Bière aux fruits (cerise)", content_type: "image/jpg")
+beer14.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701812950/Bi%C3%A8re_%C3%A0_la_myrtille_xm59ry.png")
+beer15.photo.attach(io: file, filename: "Bière aux fruits (myrtille)", content_type: "image/jpg")
+beer15.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701812891/Bi%C3%A8re_%C3%A0_la_p%C3%AAche_mktut0.jpg")
+beer16.photo.attach(io: file, filename: "Bière aux fruits (pêche)", content_type: "image/jpg")
+beer16.save
+
 
 
 puts "wine"
 
 # wine1 = Drink.create!(name: "Light", description: "Bière très rafraîchissante et désaltérante. Peu d'arômes, flaveurs courtes et faiblement sucrées.", strength: 4, fermentation: "Lager", color: "Blonde", flavor: "Maltée, céréale")
 wine1 = Drink.create!(name: "Pauillac", grape: "Cabernet Sauvignon", description: "Massif et puissant", strength: "11,5%-12,5%", origin: "Bordeaux", color: "Vin rouge brique (vieux)", flavor: "Poivrons, cassis, mûre")
-wine2 = Drink.create!(name: "Sauternes", grape: "Sauvignon", description: "Ample, grasse, onctueuse et puissante", origin: "Bordeaux", color: "Vin blanc liquoreux jaune or vif", flavor: "Bois (végétal), poire, poivron vert")
-wine3 = Drink.create!(name: "Pommard", grape: "Pinot Noir", description: "Structure tendre, caractère charnu, richesse et puissance", origin: "Bourgogne", color: "Vin rouge concentré (jeune)", flavor: "▪ Odeurs animales : cuir ▪ Fruits rouges ▪ Sous-bois")
-wine4 = Drink.create!(name: "Sancerre", grape: "Chardonnay", description: "Vin blanc sec aromatique, svelte, nerveux", origin: "Bourgogne", color: "Vin blanc sec jaune vert ou paille", flavor: "▪ Alimentaires : beurre frais, miel ▪ Minérales : pierre à fusil ▪ Fruits secs et confits : noisette")
-wine5 = Drink.create!(name: "Riesling", grape: "Riesling", description: "Gras, ample et minéral", origin: "Alsace", color: "Vin blanc sec", flavor: "▪ Acacia, citron ▪ Fleurs blanches")
-wine6 = Drink.create!(name: "Chinon", grape: "Cabernet Franc", description: "Corpulent, fondu et velouté", origin: "Val-de-Loire", color: "Vin rouge concentré", flavor: "Poivrons ▪ Fruits rouges")
-wine7 = Drink.create!(name: "Muscadet", grape: "Melon Blanc", description: "Vif, léger et aromatique", origin: "Val-de-Loire", color: "Vin blanc sec jaune pâle", flavor: "▪ Fruits frais : citron ▪ Florales : chèvrefeuille")
-wine8 = Drink.create!(name: "Savennières", grape: "Chenin Blanc", description: "Vin blanc riche et sec aux arômes de fruits blancs; miellé, rappellant la pomme compotée, le coing, les fleurs blanches", origin: "Val-de-Loire", color: "Vin blanc sec jaune paille", flavor: "Cire d’abeille ▪ Alimentaires : miel ▪ Florales : acacia ▪ Fruits secs et confits : abricot sec")
-wine9 = Drink.create!(name: "Saint-Joseph", grape: "Syrah", description: "Belle amplitude, longeur moyenne, assez souple", origin: "Côtes-du-Rhone", color: "Vin rouge pourpre (jeune)", flavor: "▪ Empyreumatiques : poivre ▪ Fruits noirs ▪ Sous-Bois : Truffes")
-wine10 = Drink.create!(name: "Condrieu", grape: "Viognier", description: "Vin blanc aromatique, riche, ample, sec", origin: "Côtes-du-Rhone", color: "Vin blanc sec jaune vert", flavor: "▪ Alimentaires : pain d’épice ▪ Fruits frais : abricots, pêche, mangue")
-wine11 = Drink.create!(name: "Saint-Amour", grape: "Gamay", description: "Léger, fin et soyeux", origin: "Beaujolais", color: "Vin rouge concentré, à boire jeune", flavor: "Bonbon acidulé ▪ Fruits rouges")
+wine2 = Drink.create!(name: "Sauternes", grape: "Sauvignon", description: "Ample, grasse, onctueuse et puissante", strength: "12,5%-14%", origin: "Bordeaux", color: "Vin blanc liquoreux jaune or vif", flavor: "Bois (végétal), poire, poivron vert")
+wine3 = Drink.create!(name: "Pommard", grape: "Pinot Noir", description: "Structure tendre, caractère charnu, richesse et puissance", strength: "12,5%-14%", origin: "Bourgogne", color: "Vin rouge concentré (jeune)", flavor: "▪ Odeurs animales : cuir ▪ Fruits rouges ▪ Sous-bois")
+wine4 = Drink.create!(name: "Sancerre", grape: "Chardonnay", description: "Vin blanc sec aromatique, svelte, nerveux", strength: "12,5%-14%", origin: "Bourgogne", color: "Vin blanc sec jaune vert ou paille", flavor: "▪ Alimentaires : beurre frais, miel ▪ Minérales : pierre à fusil ▪ Fruits secs et confits : noisette")
+wine5 = Drink.create!(name: "Riesling", grape: "Riesling", description: "Gras, ample et minéral", strength: "12,5%-14%", origin: "Alsace", color: "Vin blanc sec", flavor: "▪ Acacia, citron ▪ Fleurs blanches")
+wine6 = Drink.create!(name: "Chinon", grape: "Cabernet Franc", description: "Corpulent, fondu et velouté", origin: "Val-de-Loire", strength: "12,5%-14%", color: "Vin rouge concentré", flavor: "Poivrons ▪ Fruits rouges")
+wine7 = Drink.create!(name: "Muscadet", grape: "Melon Blanc", description: "Vif, léger et aromatique", origin: "Val-de-Loire", strength: "11,5%-12,5%", color: "Vin blanc sec jaune pâle", flavor: "▪ Fruits frais : citron ▪ Florales : chèvrefeuille")
+wine8 = Drink.create!(name: "Savennières", grape: "Chenin Blanc", description: "Vin blanc riche et sec aux arômes de fruits blancs; miellé, rappellant la pomme compotée, le coing, les fleurs blanches", origin: "Val-de-Loire", strength: "12,5%-14%", color: "Vin blanc sec jaune paille", flavor: "Cire d’abeille ▪ Alimentaires : miel ▪ Florales : acacia ▪ Fruits secs et confits : abricot sec")
+wine9 = Drink.create!(name: "Saint-Joseph", grape: "Syrah", description: "Belle amplitude, longeur moyenne, assez souple", origin: "Côtes-du-Rhone", strength: "12,5%-14%", color: "Vin rouge pourpre (jeune)", flavor: "▪ Empyreumatiques : poivre ▪ Fruits noirs ▪ Sous-Bois : Truffes")
+wine10 = Drink.create!(name: "Condrieu", grape: "Viognier", description: "Vin blanc aromatique, riche, ample, sec", origin: "Côtes-du-Rhone", strength: "12,5%-14%", color: "Vin blanc sec jaune vert", flavor: "▪ Alimentaires : pain d’épice ▪ Fruits frais : abricots, pêche, mangue")
+wine11 = Drink.create!(name: "Saint-Amour", grape: "Gamay", description: "Léger, fin et soyeux", origin: "Beaujolais", strength: "11,5%-12,5%", color: "Vin rouge concentré, à boire jeune", flavor: "Bonbon acidulé ▪ Fruits rouges")
+wine12 = Drink.create!(name: "Rosé (pressurage direct)", cépage: "Cinsault", description: "Léger, fin et soyeux", puissance: "11,5%-12,5%", origin: "Provence", color: "Robe claire, de couleur saumon", flavor: "Notes de fleurs et de melon")
+wine13 = Drink.create!(name: "Rosé (saignée/macération)", cépage: "Grolleau", description: "Onctueux, gras et suave", puissance: "11,5%-12,5%", origin: "Val-de-Loire", color: "Robe d'un rosé plus intense, grenadine", flavor: "Arômes de fruits rouges (fraise, framboise, groseille), rose, bonbon anglais, finale toute en fraîcheur")
 
 
 # photo WINES
@@ -141,7 +156,12 @@ wine10.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371206/vin_rouge_vtjiaj.jpg")
 wine11.photo.attach(io: file, filename: "Saint-Amour", content_type: "image/jpg")
 wine11.save
-
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701852341/Vin_rose_pressurage_direct_atxcsi.png")
+wine12.photo.attach(io: file, filename: "Rosé pressurage direct", content_type: "image/jpg")
+wine12.save
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701852351/Vin_rose_saignee_maceration_sizxz1.jpg")
+wine13.photo.attach(io: file, filename: "Rosé saignée macération", content_type: "image/jpg")
+wine13.save
 
 # CATEGORIES
 category1 = Category.create!(name: "Bière")
@@ -176,6 +196,11 @@ categorie_drink21 = CategorieDrink.create!(name: "Blanc", category_id: category2
 categorie_drink22 = CategorieDrink.create!(name: "Rouge", category_id: category2.id, drink_id: wine9.id)
 categorie_drink23 = CategorieDrink.create!(name: "Blanc", category_id: category2.id, drink_id: wine10.id)
 categorie_drink24 = CategorieDrink.create!(name: "Rouge", category_id: category2.id, drink_id: wine11.id)
+categorie_drink25 = CategorieDrink.create!(name: "Fruits", category_id: category1.id, drink_id: beer14.id)
+categorie_drink26 = CategorieDrink.create!(name: "Fruits", category_id: category1.id, drink_id: beer15.id)
+categorie_drink27 = CategorieDrink.create!(name: "Fruits", category_id: category1.id, drink_id: beer16.id)
+categorie_drink13 = CategorieDrink.create!(name: "Rosé", category_id: category2.id, drink_id: wine12.id)
+categorie_drink13 = CategorieDrink.create!(name: "Rosé", category_id: category2.id, drink_id: wine13.id)
 # FOODS
 puts "cheese"
 
@@ -454,6 +479,45 @@ match170 = Match.create!(food_id: cheese19.id, drink_id: wine11.id)
 match171 = Match.create!(food_id: cheese5.id, drink_id: wine11.id)
 match172 = Match.create!(food_id: cheese6.id, drink_id: wine11.id)
 match173 = Match.create!(food_id: cheese12.id, drink_id: wine11.id)
+match174= Match.create!(food_id: cheese1.id, drink_id: beer14.id)
+match175= Match.create!(food_id: cheese2.id, drink_id: beer14.id)
+match176= Match.create!(food_id: cheese3.id, drink_id: beer14.id)
+match177= Match.create!(food_id: cheese4.id, drink_id: beer14.id)
+match178= Match.create!(food_id: cheese13.id, drink_id: beer14.id)
+match179= Match.create!(food_id: cheese14.id, drink_id: beer14.id)
+match180= Match.create!(food_id: cheese15.id, drink_id: beer14.id)
+match181= Match.create!(food_id: cheese16.id, drink_id: beer14.id)
+match182= Match.create!(food_id: cheese7.id, drink_id: beer14.id)
+match183= Match.create!(food_id: cheese8.id, drink_id: beer14.id)
+match184= Match.create!(food_id: cheese1.id, drink_id: beer15.id)
+match185= Match.create!(food_id: cheese2.id, drink_id: beer15.id)
+match186= Match.create!(food_id: cheese3.id, drink_id: beer15.id)
+match187= Match.create!(food_id: cheese4.id, drink_id: beer15.id)
+match188= Match.create!(food_id: cheese13.id, drink_id: beer15.id)
+match189= Match.create!(food_id: cheese14.id, drink_id: beer15.id)
+match190= Match.create!(food_id: cheese15.id, drink_id: beer15.id)
+match191= Match.create!(food_id: cheese16.id, drink_id: beer15.id)
+match192= Match.create!(food_id: cheese7.id, drink_id: beer15.id)
+match193= Match.create!(food_id: cheese8.id, drink_id: beer15.id)
+match194= Match.create!(food_id: cheese1.id, drink_id: beer16.id)
+match195= Match.create!(food_id: cheese2.id, drink_id: beer16.id)
+match196= Match.create!(food_id: cheese3.id, drink_id: beer16.id)
+match197= Match.create!(food_id: cheese4.id, drink_id: beer16.id)
+match198= Match.create!(food_id: cheese13.id, drink_id: beer16.id)
+match199= Match.create!(food_id: cheese14.id, drink_id: beer16.id)
+match200= Match.create!(food_id: cheese15.id, drink_id: beer16.id)
+match201= Match.create!(food_id: cheese16.id, drink_id: beer16.id)
+match202= Match.create!(food_id: cheese7.id, drink_id: beer16.id)
+match203= Match.create!(food_id: cheese8.id, drink_id: beer16.id)
+match204= Match.create!(food_id: cheese13.id, drink_id: wine12.id)
+match205= Match.create!(food_id: cheese14.id, drink_id: wine12.id)
+match206= Match.create!(food_id: cheese15.id, drink_id: wine12.id)
+match207= Match.create!(food_id: cheese16.id, drink_id: wine12.id)
+match208= Match.create!(food_id: cheese13.id, drink_id: wine13.id)
+match209= Match.create!(food_id: cheese14.id, drink_id: wine13.id)
+match210= Match.create!(food_id: cheese15.id, drink_id: wine13.id)
+match211= Match.create!(food_id: cheese16.id, drink_id: wine13.id)
+
 
 
 # PAIRINGS
