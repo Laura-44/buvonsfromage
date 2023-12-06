@@ -60,6 +60,7 @@
               <% end %>
             </div>
             <div class="like_container">
+              <%# <%= f.hidden_field :categorie_drinks_name, value: @drink_value %> %>
               <%= @match.nil? %>
                 <% if @match %>
                 <div class="submit_like" data-action="click->matches#displayHeart">
@@ -78,4 +79,3 @@
     <% end %>
   </div>
 </div>
-
