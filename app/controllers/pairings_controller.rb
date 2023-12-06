@@ -22,7 +22,8 @@ class PairingsController < ApplicationController
     @pairing.user = current_user
     @matches.each do |match|
       if match.food == @pairing.food && match.drink == @pairing.drink
-        @match = Match.find_by(food: @pairing.food, drink: @pairing.drink)
+        # @match = Match.find_by(food: @pairing.food, drink: @pairing.drink)
+        @match = true
       else
         @match = false
       end

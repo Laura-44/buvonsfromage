@@ -13,7 +13,7 @@
       </svg>
     </div>
   <% if @category.name == "Fromage" %>
-    <%= cl_image_tag @cheese.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid choice-img" %>
+    <%= cl_image_tag @category_value.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid choice-img" %>
   <% elsif @category.name == "Bière" %>
     <%= cl_image_tag @category_value.drink.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
   <% else %>
@@ -60,9 +60,13 @@
               <% end %>
             </div>
             <div class="like_container">
-              <%# <%= f.hidden_field :categorie_drinks_name, value: @drink_value %> %>
-              <%= @match.nil? %>
-                <% if @match %>
+              <%# <%= f.hidden_field :categorie_drinks_name, value: @drink_value %>
+              <%#= choice == @category_value %>
+              <%#= choice == @category_value.drink %>
+              <% match = Match.find_by(drink: @category_value.drink, food: choice) %>
+              <%#= @category_value.drink.class %>
+              <%#= choice.class %>
+                <% if match %>
                 <div class="submit_like" data-action="click->matches#displayHeart">
                   <%= f.submit " ", class:"" %>
                 </div>
