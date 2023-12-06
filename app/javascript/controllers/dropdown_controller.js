@@ -11,12 +11,12 @@ export default class extends Controller {
   display(event) {
     event.preventDefault()
     const categoryId = this.categorySelectTarget.value;
-    // console.log(categoryId);
+    console.log(this.categorySelectTarget);
       if (categoryId !== '') {
         fetch('/foods?category_id=' + categoryId)
           .then(response => response.json())
           .then(data => {
-            // console.log(data);
+            // console.log(this.categorySelectTarget);
             if (data.length === 0) {
               this.subCategoryFieldTarget.style.display = 'none';
             }
@@ -24,8 +24,7 @@ export default class extends Controller {
               this.subCategorySelectTarget.innerHTML = '<option value="">Sélectionnez une sous-catégorie</option>';
               data.forEach(subCategoryTarget => {
                 const option = document.createElement('option');
-                // console.log(option);
-                option.value = subCategoryTarget.id;
+                option.value = subCategoryTarget.name;
                 option.text = subCategoryTarget.name;
                 this.subCategorySelectTarget.add(option);
                 // console.log("coucou");
@@ -38,6 +37,13 @@ export default class extends Controller {
       } else {
         this.subCategoryFieldTarget.style.display = 'none';
       }
+  }
+
+  subDisplay(event) {
+    event.preventDefault()
+    console.log(this.subCategorySelectTarget);
+
+
   }
 
   secondDisplay(event) {

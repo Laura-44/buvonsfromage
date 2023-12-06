@@ -12,9 +12,9 @@
   <% if @category.name == "Fromage" %>
     <%= cl_image_tag @cheese.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
   <% elsif @category.name == "Bière" %>
-    <%= cl_image_tag @beer_category.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
+    <%= cl_image_tag @category_value.drink.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
   <% else %>
-    <%= cl_image_tag @wine_category.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
+    <%= cl_image_tag @category_value.drink.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
   <% end %>
 
   <div class="pairing-wrapper">
@@ -45,7 +45,6 @@
           <div class="choice-btn">
             <div class="unlike_container">
               <%= link_to dislike_category_path(id: choice, class: choice.class), data: {turbo_method: :patch} do %>
-              <%# tous ceux qui sont dans les suggestions, sauf  %>
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
                   <path d="M28.5634 30.625C28.4192 30.625 28.2764 30.5965 28.1432 30.5412C28.0101 30.4858 27.8892 30.4046 27.7875 30.3024L2.77894 5.1461C2.57443 4.94033 2.46005 4.66174 2.46094 4.37162C2.46184 4.08151 2.57795 3.80364 2.78372 3.59913C2.9895 3.39462 3.26809 3.28024 3.5582 3.28113C3.84831 3.28203 4.12619 3.39814 4.3307 3.60391L29.3386 28.7602C29.4909 28.9134 29.5944 29.1082 29.6361 29.3201C29.6778 29.5321 29.6558 29.7516 29.5729 29.9511C29.49 30.1505 29.3498 30.321 29.1702 30.4409C28.9906 30.5609 28.7794 30.6249 28.5634 30.625ZM24.9458 5.46876C21.9319 5.46876 19.8455 7.16544 18.6301 8.57911C18.5916 8.62344 18.544 8.65899 18.4906 8.68335C18.4372 8.70771 18.3792 8.72032 18.3204 8.72032C18.2617 8.72032 18.2037 8.70771 18.1503 8.68335C18.0968 8.65899 18.0493 8.62344 18.0108 8.57911C16.7953 7.16544 14.7083 5.46876 11.6951 5.46876C10.9773 5.46837 10.2634 5.57293 9.57591 5.77911L27.9735 24.284C28.1785 24.0488 28.3631 23.8301 28.5299 23.6277C31.2643 20.2952 32.5734 16.8745 32.5365 13.1688C32.4961 8.92296 29.0898 5.46876 24.9458 5.46876ZM4.71693 10.1958C4.32073 11.1374 4.11176 12.1472 4.10169 13.1688C4.06478 16.8745 5.37523 20.2952 8.10824 23.6277C9.39134 25.1911 11.7176 27.6917 17.09 31.3387C17.4524 31.5866 17.8813 31.7193 18.3204 31.7193C18.7596 31.7193 19.1885 31.5866 19.5509 31.3387C20.942 30.394 22.1281 29.5272 23.1452 28.7328L4.71693 10.1958Z" fill="white"/>
                 </svg>
@@ -60,34 +59,7 @@
           </div>
         <% end %>
       </div>
-      <%# <%= link_to "Description", food_path %>
-      <%# <%= link_to "Description", drink_path %>
     <% end %>
   </div>
 </div>
-<%# create de pairings qui redigire vers categories  : ok%>
 
-<%# js stimulus %>
-<%# quand click sur "je valide" ou "X" (data-action) %>
-<%# recharge de la page et affichage de l'id suivant (AJAX) %>
-
-
-<%# data-action sur les links %>
-<%# fetch sur @choice.first pour aller rechercher l'id suivante : AJAX %>
-
-
-
-
-<%# <button class="btn btn-primary btn-lg" %>
-        <%# data-controller="disable-button" %>
-        <%# data-action="click->disable-button#disable"> %>
-  <%# Je Valide! %>
-<%# </button> %>
-
-<%# créer un fichier pairing_controller.js, y mettre : %>
-<%#  disable() {
-    this.element.innerText = "Bingo!";
-    this.element.setAttribute("disabled", "");
-  } %>
-
-  <%# <%= link_to "je valide", categories_path(@pairings) %>
