@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
 
 
     if @category.name == "Fromage"
-      @cheese = Food.first
+      @category_value = Food.first
 
       if @second_category.name == "Vin"
         # @category_value = CategorieDrink.find_by(name: params[:categorie_drinks_name])
