@@ -117,8 +117,8 @@ wine8 = Drink.create!(name: "Savennières", grape: "Chenin Blanc", description: 
 wine9 = Drink.create!(name: "Saint-Joseph", grape: "Syrah", description: "Belle amplitude, longeur moyenne, assez souple", origin: "Côtes-du-Rhone", strength: "12,5%-14%", color: "Vin rouge pourpre (jeune)", flavor: "▪ Empyreumatiques : poivre ▪ Fruits noirs ▪ Sous-Bois : Truffes")
 wine10 = Drink.create!(name: "Condrieu", grape: "Viognier", description: "Vin blanc aromatique, riche, ample, sec", origin: "Côtes-du-Rhone", strength: "12,5%-14%", color: "Vin blanc sec jaune vert", flavor: "▪ Alimentaires : pain d’épice ▪ Fruits frais : abricots, pêche, mangue")
 wine11 = Drink.create!(name: "Saint-Amour", grape: "Gamay", description: "Léger, fin et soyeux", origin: "Beaujolais", strength: "11,5%-12,5%", color: "Vin rouge concentré, à boire jeune", flavor: "Bonbon acidulé ▪ Fruits rouges")
-wine12 = Drink.create!(name: "Rosé (pressurage direct)", cépage: "Cinsault", description: "Léger, fin et soyeux", puissance: "11,5%-12,5%", origin: "Provence", color: "Robe claire, de couleur saumon", flavor: "Notes de fleurs et de melon")
-wine13 = Drink.create!(name: "Rosé (saignée/macération)", cépage: "Grolleau", description: "Onctueux, gras et suave", puissance: "11,5%-12,5%", origin: "Val-de-Loire", color: "Robe d'un rosé plus intense, grenadine", flavor: "Arômes de fruits rouges (fraise, framboise, groseille), rose, bonbon anglais, finale toute en fraîcheur")
+wine12 = Drink.create!(name: "Rosé (pressurage direct)", grape: "Cinsault", description: "Léger, fin et soyeux", puissance: "11,5%-12,5%", origin: "Provence", color: "Robe claire, de couleur saumon", flavor: "Notes de fleurs et de melon")
+wine13 = Drink.create!(name: "Rosé (saignée/macération)", grape: "Grolleau", description: "Onctueux, gras et suave", puissance: "11,5%-12,5%", origin: "Val-de-Loire", color: "Robe d'un rosé plus intense, grenadine", flavor: "Arômes de fruits rouges (fraise, framboise, groseille), rose, bonbon anglais, finale toute en fraîcheur")
 
 
 # photo WINES
