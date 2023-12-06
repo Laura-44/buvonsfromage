@@ -37,7 +37,6 @@ class CategoriesController < ApplicationController
         @category_value = CategorieDrink.find_by(name: params[:categorie_drinks_name])
         # 2 - depuis le categorie drinks tu stocke dans une variable le drinks correspondant
         @drink_value = @category_value.name
-        raise
         # 3 - dans ton html tu drinks.photo.key
         session[:foods_for_beer] = Category.find_by(name: "Fromage").foods.pluck(:id) if session[:foods_for_beer].blank?
         @choices = Food.where(id: session[:foods_for_beer])
