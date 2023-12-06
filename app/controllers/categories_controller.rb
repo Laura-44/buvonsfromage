@@ -3,6 +3,10 @@ class CategoriesController < ApplicationController
     def index
       # je dois recuperer tous les pairings => @user_parings
       @user_pairings = Pairing.where(user: current_user)
+      # @matches = Match.all
+      # @user_pairings.each do |user_pairing|
+      #   user_pairaing.matches.each do ||
+      # end
 
       @category = Category.find(params[:category_id])
       @second_category = params[:second_category_id].nil? ? nil : Category.find(params[:second_category_id])
@@ -11,18 +15,30 @@ class CategoriesController < ApplicationController
         @cheese = Food.first
 
         if @second_category.name == "Vin"
+          # @category_value = CategorieDrink.find_by(name: params[:categorie_drinks_name])
+          # @drink_value = @category_value.name
+
           session[:wine_for_food] = Category.find_by(name: "Vin").foods.pluck(:id)
           @choices = Drink.where(id: session[:wine_for_food])
           @choices = @second_category.drinks
           pairing_supression
         else
           @choices = Category.find_by(name: "Bière").drinks
+          # @category_value = CategorieDrink.find_by(name: params[:categorie_drinks_name])
+          # @drink_value = @category_value.name
+
           pairing_supression
         end
         # TODO enlver tous les drinks qui on un pairings (le drink en question a un pairing avec un fromage)
 
       elsif @category.name == "Bière"
-        @beer_category = @category.drinks.first
+        # @beer_category = @category.drinks.first
+        # 1 - stocke dans une variable la categorie drinks correspondant au nom du params category drinks name
+        @category_value = CategorieDrink.find_by(name: params[:categorie_drinks_name])
+        # 2 - depuis le categorie drinks tu stocke dans une variable le drinks correspondant
+        @drink_value = @category_value.name
+        raise
+        # 3 - dans ton html tu drinks.photo.key
         session[:foods_for_beer] = Category.find_by(name: "Fromage").foods.pluck(:id) if session[:foods_for_beer].blank?
         @choices = Food.where(id: session[:foods_for_beer])
         # enlever tous les foods qui sont présents dans les pairings
@@ -30,9 +46,12 @@ class CategoriesController < ApplicationController
         pairing_supression
 
       else
+
         @wine_category = @category.drinks.first
         session[:foods_for_wine] = Category.find_by(name: "Fromage").foods.pluck(:id) if session[:foods_for_wine].blank?
         @choices = Food.where(id: session[:foods_for_wine])
+        @category_value = CategorieDrink.find_by(name: params[:categorie_drinks_name])
+        @drink_value = @category_value.name
         pairing_supression
         # TODO enlver tous les drinks qui on un pairings (le food en question a un pairing ave un drink de la category)
         # ici, la supression du pairing fonctionne : j'ai du vin, je cherche du fromage
@@ -70,14 +89,3 @@ class CategoriesController < ApplicationController
     end
   end
 end
-
-
-# def dislike
-#   if choice = Food.find(params[:id])
-#     session[:foods_for_wine].delete(choice.id)
-#   elsif choice = Food.find(params[:id])
-#     session[:foods_for_beer].delete(choice.id)
-#   else
-#     choice = Drink.find(params[:id])
-#     session[:wine_for_food].delete(choice.id)
-#   end
