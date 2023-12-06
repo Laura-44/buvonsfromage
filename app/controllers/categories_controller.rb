@@ -27,7 +27,6 @@ class CategoriesController < ApplicationController
         @choices = Category.find_by(name: "Bière").drinks
         # @category_value = CategorieDrink.find_by(name: params[:categorie_drinks_name])
         # @drink_value = @category_value.name
-
         pairing_supression
       end
       # TODO enlver tous les drinks qui on un pairings (le drink en question a un pairing avec un fromage)
