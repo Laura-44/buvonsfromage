@@ -13,7 +13,7 @@
       </svg>
     </div>
   <% if @category.name == "Fromage" %>
-    <%= cl_image_tag @cheese.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
+    <%= cl_image_tag @cheese.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid choice-img" %>
   <% elsif @category.name == "Bière" %>
     <%= cl_image_tag @category_value.drink.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
   <% else %>
@@ -24,7 +24,7 @@
     <% @choices.each do |choice| %>
       <div class="pairing" data-controller="pairing">
         <%= simple_form_for Pairing.new do |f| %>
-          <%= cl_image_tag choice.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
+          <%= cl_image_tag choice.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid choice-img" %>
 
           <div class="d-none">
             <% if @category.name == "Fromage" %>
@@ -40,9 +40,15 @@
           <%= f.hidden_field :category_id, value: @category.id %>
           <%= f.hidden_field :second_category_id, value: @second_category.id%>
           <% if @category.name == "Fromage" %>
-            <%= link_to choice.name, drink_path(choice.id), class:"choice-name" %>
+            <%= link_to drink_path(choice.id), class:"choice-name" do %>
+              <i class="fa-solid fa-circle-info" style="color: #ff7b0f; margin-right: 3px;"></i>
+              <%= choice.name %>
+            <% end %>
           <% else %>
-            <%= link_to choice.name, food_path(choice.id), class:"choice-name" %>
+            <%= link_to food_path(choice.id), class:"choice-name" do %>
+              <i class="fa-solid fa-circle-info" style="color: #ff7b0f; margin-right: 3px;"></i>
+              <%= choice.name %>
+            <% end %>
           <% end %>
 
           <div class="choice-btn">
