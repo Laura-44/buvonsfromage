@@ -1,6 +1,5 @@
 class PairingsController < ApplicationController
   def index
-    # @reservations = Reservation.all
     @pairings = Pairing.all
     @matches = Match.all
 
@@ -28,7 +27,6 @@ class PairingsController < ApplicationController
         @match = false
       end
     end
-    # raise
     @pairing.save!
     redirect_to categories_path({ second_category_id: @second_category.id, category_id: @category.id, drink: @pairing.drink })
   end

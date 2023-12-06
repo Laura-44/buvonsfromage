@@ -7,7 +7,6 @@ class CategoriesController < ApplicationController
     # @user_pairings.each do |user_pairing|
     #   user_pairaing.matches.each do ||
     # end
-
     @category = Category.find(params[:category_id])
     @second_category = params[:second_category_id].nil? ? nil : Category.find(params[:second_category_id])
 
