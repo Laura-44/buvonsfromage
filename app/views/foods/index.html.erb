@@ -14,18 +14,18 @@
       <div class="search-form-wrapper">
         <div class="field">
           <%= label_tag :category_id, 'Ce que j\'ai ...', class: 'index-subtitle' %>
-          <%= select_tag :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, @selected_category_id), prompt: 'Recherche', id: 'category-select', data: { action: "change->dropdown#display", dropdown_target: "categorySelect" } %>
+          <%= select_tag :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }), prompt: 'Recherche', id: 'category-select', data: { action: "change->dropdown#display", dropdown_target: "categorySelect" } %>
         </div>
 
         <div class="field" id="sub-category-field" style="display: none" data-dropdown-target="subCategoryField">
-          <%= label_tag :subcategory_id, 'et plus précisement :', class: 'index-subtitle' %>
-          <%= select_tag :subcategory_id, options_for_select(@categorie_drinks.map { |s| [s.name, s.id] }), prompt: 'Sélectionnez une sous-catégorie', id: 'sub-category-select', data: { dropdown_target: "subCategorySelect"} %>
+          <%= label_tag :categorie_drinks_name, 'et plus précisement :', class: 'index-subtitle' %>
+          <%= select_tag :categorie_drinks_name, options_for_select(@categorie_drinks.map { |s| [s.name, s.id] }), prompt: 'Sélectionnez une sous-catégorie', id: 'sub-category-select', data: { action: "change->dropdown#subDisplay", dropdown_target: "subCategorySelect"} %>
         </div>
 
         <%# 2E PRODUIT A SELECTIONNER %>
         <div class="field">
           <%= label_tag :second_category_id, 'Ce que je cherche ...', class: 'index-subtitle' %>
-          <%= select_tag :second_category_id, options_for_select(@second_categories.map { |c| [c.name, c.id] }, @selected_second_category_id), prompt: 'Recherche', id: 'second-category-select', data: { action: "change->dropdown#secondDisplay", dropdown_target: "secondCategorySelect" } %>
+          <%= select_tag :second_category_id, options_for_select(@second_categories.map { |c| [c.name, c.id] }), prompt: 'Recherche', id: 'second-category-select', data: { action: "change->dropdown#secondDisplay", dropdown_target: "secondCategorySelect" } %>
         </div>
 
         <div class="field" id="second-sub-category-field" style="display: none" data-dropdown-target="secondSubCategoryField">
