@@ -15,6 +15,6 @@ export default class extends Controller {
     // console.log("hello");
     setTimeout(() => {
       this.heartTarget.style.display = "none";
-    }, 10000);
+    }, 5000);
   }
 }
