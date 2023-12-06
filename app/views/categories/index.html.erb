@@ -2,7 +2,10 @@
   <%= render "shared/navbar" %>
 </div>
 
-<div id="index-categories">
+<div id="index-categories" data-controller="matches">
+  <div class="heart-matches" style="display: none" data-matches-target="heart">
+    <i class="fa-solid fa-heart"></i>
+  </div>
     <div class="category_fleche">
       <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none">
         <circle cx="22.5" cy="22.5" r="22.5" fill="#FF7B0F"/>
@@ -52,7 +55,14 @@
               <% end %>
             </div>
             <div class="like_container">
-              <%= f.submit " ", class:"submit_like" %>
+              <%= @match.nil? %>
+                <% if @match %>
+                <div class="submit_like" data-action="click->matches#displayHeart">
+                  <%= f.submit " ", class:"" %>
+                </div>
+                <% else %>
+                  <%= f.submit " ", class:"submit_like" %>
+                <% end  %>
               <svg xmlns="http://www.w3.org/2000/svg" width="35" height="32" viewBox="0 0 35 32" fill="none">
                 <path d="M2.9165 13.3248C2.9165 20.4166 8.779 24.1952 13.0694 27.5785C14.5832 28.7714 16.0415 29.8958 17.4998 29.8958C18.9582 29.8958 20.4165 28.7729 21.9303 27.5771C26.2221 24.1966 32.0832 20.4166 32.0832 13.3262C32.0832 6.23436 24.0623 1.20457 17.4998 8.02373C10.9373 1.20311 2.9165 6.2329 2.9165 13.3248Z" fill="#FF7B0F"/>
               </svg>
