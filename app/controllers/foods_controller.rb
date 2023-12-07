@@ -39,7 +39,6 @@ class FoodsController < ApplicationController
     # raise
     session[:foods_for_wine] = nil
     session[:foods_for_beer] = nil
-
   end
 
   def show

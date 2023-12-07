@@ -10,9 +10,7 @@ export default class extends Controller {
 
 
   displayHeart () {
-    console.log("coucou");
     this.heartTarget.style.display = ""
-    console.log("hello");
     setTimeout(() => {
       this.heartTarget.style.display = "none";
     }, 2000);
