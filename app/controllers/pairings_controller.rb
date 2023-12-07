@@ -19,7 +19,7 @@ class PairingsController < ApplicationController
   end
 
   def create
-    sleep 2
+    sleep 1
     # @second_subcategory = Category.find(params[:pairing][:second_category_id])
     # raise
     @matches = Match.all

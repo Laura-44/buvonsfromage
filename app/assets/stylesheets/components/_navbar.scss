@@ -64,7 +64,7 @@
 
   .icon-glass {
     position: absolute;
-    top: 11px;
+    top: 8px;
     left: -44px;
   }
 }
@@ -84,8 +84,10 @@ html:has(.navbar-container.active) {
 ul.dropdown-menu.show {
   padding: 40px;
   text-align: center;
-  margin: -1px;
-  height: calc(100dvh - 54px);
+  margin: -2px;
+  margin-top: -5px;
+  height: calc(100dvh - 34px);
+  border: none;
 }
 
 .link-search.active a {
