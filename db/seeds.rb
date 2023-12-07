@@ -523,8 +523,8 @@ match211= Match.create!(food_id: cheese16.id, drink_id: wine13.id)
 # PAIRINGS
 puts "pairings"
 
-pairing1 = Pairing.create!(food_id: cheese3.id, drink_id: beer3.id, user_id: user1.id)
-pairing2 = Pairing.create!(food_id: cheese4.id, drink_id: beer4.id, user_id: user2.id)
+# pairing1 = Pairing.create!(food_id: cheese3.id, drink_id: beer3.id, user_id: user1.id)
+# pairing2 = Pairing.create!(food_id: cheese4.id, drink_id: beer4.id, user_id: user2.id)
 
 # USER-CATEGORIES
 # puts "user-categories"
