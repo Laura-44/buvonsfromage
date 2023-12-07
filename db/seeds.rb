@@ -226,35 +226,35 @@ cheese19 = Food.create!(name: "Beaufort", family: "Fromage à pâte pressée cui
 
 # photo CHEESES
 puts "photo"
-file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376099/brie%20de%20meaux.jpg")
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701895940/brie_meaux_jeune_mdvqak.jpg")
 cheese1.photo.attach(io: file, filename: "Brie de Meaux jeune", content_type: "image/jpg")
 cheese1.save
 puts "brie1"
-file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376099/brie%20de%20meaux.jpg")
-cheese2.photo.attach(io: file, filename: "Brie de Meaux vieux", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701895940/brie_meaux_affine_dwzr4j.jpg")
+cheese2.photo.attach(io: file, filename: "Brie de Meaux affiné", content_type: "image/jpg")
 cheese2.save
 puts "neufchatel"
-file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376165/Neufchatel_exulse.jpg")
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701895941/neufchatel_jeune_hvcxm2.jpg")
 cheese3.photo.attach(io: file, filename: "Neufchatel jeune", content_type: "image/jpg")
 cheese3.save
 puts "neufchatel"
-file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376165/Neufchatel_exulse.jpg")
-cheese4.photo.attach(io: file, filename: "Neufchatel vieux", content_type: "image/jpg")
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701895940/neufchatel_affine_oilkgq.jpg")
+cheese4.photo.attach(io: file, filename: "Neufchatel affiné", content_type: "image/jpg")
 cheese4.save
 puts "reblochon"
-file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371828/1701362185805xo0fnur9_ybufec.png")
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701896758/Reblochon_li7ecq.jpg")
 cheese5.photo.attach(io: file, filename: "Reblochon", content_type: "image/jpg")
 cheese5.save
 puts "saint-nectaire"
-file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376360/_47e1f8ef-0520-4a4b-a59d-6b3b2ca3f114_bbrfmw.jpg")
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701896823/Saint_Nectaire_dyf8aj.png")
 cheese6.photo.attach(io: file, filename: "Saint-Nectaire", content_type: "image/jpg")
 cheese6.save
 puts "bleu"
-file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376360/Roquefort_odcuit.jpg")
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701896461/Bleu_d_Auvergne_cmrxzz.png")
 cheese7.photo.attach(io: file, filename: "Bleu d'Auvergne", content_type: "image/jpg")
 cheese7.save
 puts "roquefort"
-file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701376360/Roquefort_odcuit.jpg")
+file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701896450/Roquefort_avggrc.jpg")
 cheese8.photo.attach(io: file, filename: "Roquefort", content_type: "image/jpg")
 cheese8.save
 puts "epoisses"
