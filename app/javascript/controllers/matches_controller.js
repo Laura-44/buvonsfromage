@@ -5,16 +5,16 @@ export default class extends Controller {
   static targets = ["heart"]
 
   connect() {
-    // console.log("matches");
+    console.log("matches");
   }
 
 
   displayHeart () {
-    // console.log("coucou");
+    console.log("coucou");
     this.heartTarget.style.display = ""
-    // console.log("hello");
+    console.log("hello");
     setTimeout(() => {
       this.heartTarget.style.display = "none";
-    }, 5000);
+    }, 2000);
   }
 }
