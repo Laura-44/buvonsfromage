@@ -12,13 +12,14 @@
         <path d="M21.9849 26.7437L15.3442 20.103C14.8853 19.644 14.8853 18.9019 15.3442 18.4478L16.4478 17.3442C16.9067 16.8853 17.6489 16.8853 18.103 17.3442L22.8101 22.0513L27.5171 17.3442C27.9761 16.8853 28.7183 16.8853 29.1724 17.3442L30.2759 18.4478C30.7349 18.9067 30.7349 19.6489 30.2759 20.103L23.6353 26.7437C23.186 27.2026 22.4438 27.2026 21.9849 26.7437Z" fill="white"/>
       </svg>
     </div>
-  <% if @category.name == "Fromage" %>
-    <%= cl_image_tag @category_value.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid choice-img" %>
-  <% elsif @category.name == "Bière" %>
-    <%= cl_image_tag @category_value.drink.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
-  <% else %>
-    <%= cl_image_tag @category_value.drink.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
-  <% end %>
+
+    <% if @category.name == "Fromage" %>
+      <%= cl_image_tag @category_value.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid choice-img" %>
+    <% elsif @category.name == "Bière" %>
+      <%= cl_image_tag @category_value.drink.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
+    <% else %>
+      <%= cl_image_tag @category_value.drink.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid rounded-4 pb-2 choice-img" %>
+    <% end %>
 
   <div class="pairing-wrapper">
     <% @choices.each do |choice| %>
@@ -31,9 +32,9 @@
               <%= f.input :drink_id, value: choice.id %>
               <%= f.hidden_field :food_id, value: @category.foods.sample.id %>
             <% else %>
-              <% drink =  @category.drinks.sample%>
+              <% drink =  @color.drink%>
               <%= f.input :food_id, input_html: {value: choice.id} %>
-              <%= f.hidden_field :drink_id, value: drink.id %>
+              <%= f.input :drink_id, input_html: { value: drink.id } %>
             <% end %>
           </div>
 
@@ -67,8 +68,8 @@
               <%#= @category_value.drink.class %>
               <%#= choice.class %>
                 <% if match %>
-                <div class="submit_like" data-action="click->matches#displayHeart">
-                  <%= f.submit " ", class:"" %>
+                <div class="" data-action="click->matches#displayHeart">
+                  <%= f.submit " ", class:"submit_like" %>
                 </div>
                 <% else %>
                   <%= f.submit " ", class:"submit_like" %>

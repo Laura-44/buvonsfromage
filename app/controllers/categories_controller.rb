@@ -1,15 +1,11 @@
 class CategoriesController < ApplicationController
 
   def index
-    # je dois recuperer tous les pairings => @user_parings
+    # binding.pry
+    @color = CategorieDrink.find_by(name: params[:categorie_drinks_name])
     @user_pairings = Pairing.where(user: current_user)
-    # @matches = Match.all
-    # @user_pairings.each do |user_pairing|
-    #   user_pairaing.matches.each do ||
-    # end
     @category = Category.find(params[:category_id])
     @second_category = params[:second_category_id].nil? ? nil : Category.find(params[:second_category_id])
-
 
     if @category.name == "Fromage"
       @category_value = Food.first
@@ -31,46 +27,36 @@ class CategoriesController < ApplicationController
       # TODO enlver tous les drinks qui on un pairings (le drink en question a un pairing avec un fromage)
 
     elsif @category.name == "Bière"
-      # @beer_category = @category.drinks.first
-      # 1 - stocke dans une variable la categorie drinks correspondant au nom du params category drinks name
       if params[:drink].present?
         drink_name = Drink.find(params[:drink])
         @category_value = CategorieDrink.find_by(name: drink_name.color)
-        # raise
       else
         @category_value = CategorieDrink.find_by(name: params[:categorie_drinks_name])
       end
 
-      # 2 - depuis le categorie drinks tu stocke dans une variable le drinks correspondant
       @drink_value = @category_value.name
-      # 3 - dans ton html tu drinks.photo.key
       session[:foods_for_beer] = Category.find_by(name: "Fromage").foods.pluck(:id) if session[:foods_for_beer].blank?
       @choices = Food.where(id: session[:foods_for_beer])
-      # enlever tous les foods qui sont présents dans les pairings
-      # ici, la supression du pairing fonctionne : j'ai une bière, je cherche des fromages
       pairing_supression
 
     elsif @category.name == "Vin"
-      @wine_category = @category.drinks.first
+
       session[:foods_for_wine] = Category.find_by(name: "Fromage").foods.pluck(:id) if session[:foods_for_wine].blank?
       @choices = Food.where(id: session[:foods_for_wine])
+
       if params[:drink].present?
-        drink_name = Drink.find(params[:drink])
-        @category_value = CategorieDrink.find_by(name: drink_name.color)
-        # raise
+        # drink_name = Drink.find(params[:drink])
+        @category_value = CategorieDrink.find_by(name: @color.name)
       else
         @category_value = CategorieDrink.find_by(name: params[:categorie_drinks_name])
       end
-      @drink_value = @category_value.name
       pairing_supression
-      # TODO enlver tous les drinks qui on un pairings (le food en question a un pairing ave un drink de la category)
-      # ici, la supression du pairing fonctionne : j'ai du vin, je cherche du fromage
     end
+
   end
 
   def dislike
     choice = params[:class].constantize.find(params[:id])
-
     if choice == Food.find(params[:id])
       # raise
       session[:foods_for_wine].delete(params[:id].to_i) if session[:foods_for_wine]&.include?(params[:id].to_i)
