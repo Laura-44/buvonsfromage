@@ -13,6 +13,6 @@ export default class extends Controller {
     this.heartTarget.style.display = ""
     setTimeout(() => {
       this.heartTarget.style.display = "none";
-    }, 2000);
+    }, 15000);
   }
 }
