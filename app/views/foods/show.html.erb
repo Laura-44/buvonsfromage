@@ -41,12 +41,18 @@
             </svg>
           <% end %>
         </h3>
-        <i class="fa-solid fa-map" style="color: #ffffff;"></i>
-        <p class= "show-origin text-center m-1"><%= @food.origin %></p>
-        <i class="fa-solid fa-cheese" style="color: #ffffff;"></i>
-        <p class= "show-family text-center m-1"><%= @food.family %></p>
-        <i class="fa-regular fa-calendar-days" style="color: #ffffff;"></i>
-        <p class= "show-aging text-center m-1"><%= @food.aging %></p>
+        <div class="origin-center">
+          <i class="fa-solid fa-map" style="color: #ffffff;"></i>
+          <p class= "show-origin text-center m-1"><%= @food.origin %></p>
+        </div>
+        <div class="family-center">
+          <i class="fa-solid fa-cheese" style="color: #ffffff;"></i>
+          <p class= "show-family text-center m-1"><%= @food.family %></p>
+        </div>
+        <div class="aging-center">
+          <i class="fa-regular fa-calendar-days" style="color: #ffffff;"></i>
+          <p class= "show-aging text-center m-1"><%= @food.aging %></p>
+        </div>
       </div>
       <p class= "show-description text-center m-4"><%= @food.description %></p>
       <%# <%= link_to 'TROUVER', foods_path %>

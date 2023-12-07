@@ -100,3 +100,19 @@
   justify-content: center;
   align-items: center;
 }
+
+.family-center{
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+  justify-content: center;
+  align-items: center;
+}
+
+.aging-center{
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+  justify-content: center;
+  align-items: center;
+}
