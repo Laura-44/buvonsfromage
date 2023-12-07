@@ -73,20 +73,23 @@
   }
 
   .heart-matches {
-    // background-color: yellow;
-    // height: 100dvh;
-    // width: 100dvh;
-    height: 100vh; /* Garantit que le corps occupe toute la hauteur de la fenêtre */
+    border-radius: 50%;
+    width: 300px;
+    height: 300px; /* Garantit que le corps occupe toute la hauteur de la fenêtre */
     display: flex;
     align-items: center;
     justify-content: center;
-
-    // border: 1px solid yellow;
-    // display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 10;
 
     .heart {
       font-size: 130px;
-      color: red;
+      color: $red-bf;
+      z-index: 3;
     }
   }
 }
