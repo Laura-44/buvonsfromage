@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="matches"
 export default class extends Controller {
-  static targets = ["heart"]
+  static targets = ["heart", "btnsubmit"]
 
   connect() {
     console.log("matches");
@@ -11,8 +11,5 @@ export default class extends Controller {
 
   displayHeart () {
     this.heartTarget.style.display = ""
-    setTimeout(() => {
-      this.heartTarget.style.display = "none";
-    }, 15000);
   }
 }

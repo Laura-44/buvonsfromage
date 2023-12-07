@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
 
   def index
     # binding.pry
+    @pairing = Pairing.new
     @color = CategorieDrink.find_by(name: params[:categorie_drinks_name])
     @user_pairings = Pairing.where(user: current_user)
     @category = Category.find(params[:category_id])

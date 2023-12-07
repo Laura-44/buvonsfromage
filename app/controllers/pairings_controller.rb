@@ -19,6 +19,7 @@ class PairingsController < ApplicationController
   end
 
   def create
+    sleep 2
     # @second_subcategory = Category.find(params[:pairing][:second_category_id])
     # raise
     @matches = Match.all
@@ -36,7 +37,6 @@ class PairingsController < ApplicationController
         @match = false
       end
     end
-
     @pairing.save!
     redirect_to categories_path({ second_category_id: @second_category.id, category_id: @category.id, categorie_drinks_name: @categorie_drinks_name})
   end
