@@ -46,9 +46,9 @@ beer10 = Drink.create!(name: "Stout", description: "Originaire d'Angleterre, la 
 beer11 = Drink.create!(name: "NEIPA", description: "New England IPA. Construite sur l'aromatique sans l'amertume. Peu filtrée pour obtenir une sensation juteuse en bouche. Version très fruitée et trouble de l'IPA.", strength: "4-6% ABV", fermentation: "Ale", color: "Blonde", flavor: "Issu de plusieurs houblonnages à cru massif afin de renforcer les parfums des houblons aromatiques.B ière qui s'apparente beaucoup à un jus de fruit de part ses puissants arômes fruités.")
 beer12 = Drink.create!(name: "IPA", description: "Bière de caractère créée en Angleterre pur pouvoir résister au transport jusqu'aux colonies britanniques (vertus antiseptiques du houblon).", strength: "4-6% ABV", fermentation: "Ale", color: "Blonde", flavor: "Bière très houblonnée avec des arômes floraux, épicés et d'agrûmes")
 beer13 = Drink.create!(name: "Barley Wine", description: "Egalement appelée 'vin d'orge'. Texture presque liquoreuse, jolie couleur cuivrée et une touche de caramel prononcée. A laisser mûrir plusieurs années dans leur bouteille avant de les consommer.", strength: ">9% ABV", fermentation: "Ale", color: "Ambrée", flavor: "On retrouve généralement des touches d'alcool, de caramel, de fruits secs, de pain grillé, de mélasse (mixture issue de la betterave sucrière ou de la canne à sucre).")
-beer14 = Drink.create!(name: "Bière aux fruits (cerise)", description: "En bouche, l’acidité et la sucrosité de la cerise sont les principales saveurs perçues. ", strength: "<4% ABV", fermentation: "Spontannée", color: "Fruits", flavor: "Au nez, on perçoit des arômes de fruits rouges, de cerise en particulier, ainsi que de fraises des bois plus confites.")
-beer15 = Drink.create!(name: "Bière aux fruits (myrtille)", description: "Sur une base de bière blonde légère en alcool, on rajoute en quantité des myrtilles lors de la fermentation.", strength: "<4% ABV", fermentation: "Spontannée", color: "Fruits", flavor: "Profil organoleptique aussi fruité qu'acidulé.")
-beer16 = Drink.create!(name: "Bière aux fruits (pêche)", description: "Il n’y a pas d’amertume mais une fine acidité persiste et nous conduit sur une finale sucrée avec une sensation de sucre candi et de pêche.", strength: "<4% ABV", fermentation: "Spontannée", color: "Fruits", flavor: "Infiniment gourmande, douce et acidulée, cette bière de fermentation spontanée à la robe orangée offre un nez est acide et sucré à la fois.")
+beer14 = Drink.create!(name: "Bière cerise", description: "En bouche, l’acidité et la sucrosité de la cerise sont les principales saveurs perçues. ", strength: "<4% ABV", fermentation: "Spontannée", color: "Fruits", flavor: "Au nez, on perçoit des arômes de fruits rouges, de cerise en particulier, ainsi que de fraises des bois plus confites.")
+beer15 = Drink.create!(name: "Bière myrtille", description: "Sur une base de bière blonde légère en alcool, on rajoute en quantité des myrtilles lors de la fermentation.", strength: "<4% ABV", fermentation: "Spontannée", color: "Fruits", flavor: "Profil organoleptique aussi fruité qu'acidulé.")
+beer16 = Drink.create!(name: "Bière pêche", description: "Il n’y a pas d’amertume mais une fine acidité persiste et nous conduit sur une finale sucrée avec une sensation de sucre candi et de pêche.", strength: "<4% ABV", fermentation: "Spontannée", color: "Fruits", flavor: "Infiniment gourmande, douce et acidulée, cette bière de fermentation spontanée à la robe orangée offre un nez est acide et sucré à la fois.")
 
 # PHOTOS BEERS
 puts "Photos"
@@ -92,13 +92,13 @@ file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701363621/b
 beer13.photo.attach(io: file, filename: "Barley Wine", content_type: "image/jpg")
 beer13.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701812893/Bi%C3%A8re_%C3%A0_la_cerie_zre8fd.jpg")
-beer14.photo.attach(io: file, filename: "Bière aux fruits (cerise)", content_type: "image/jpg")
+beer14.photo.attach(io: file, filename: "Bière cerise", content_type: "image/jpg")
 beer14.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701812950/Bi%C3%A8re_%C3%A0_la_myrtille_xm59ry.png")
-beer15.photo.attach(io: file, filename: "Bière aux fruits (myrtille)", content_type: "image/jpg")
+beer15.photo.attach(io: file, filename: "Bière myrtille", content_type: "image/jpg")
 beer15.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701812891/Bi%C3%A8re_%C3%A0_la_p%C3%AAche_mktut0.jpg")
-beer16.photo.attach(io: file, filename: "Bière aux fruits (pêche)", content_type: "image/jpg")
+beer16.photo.attach(io: file, filename: "Bière pêche", content_type: "image/jpg")
 beer16.save
 
 
@@ -117,8 +117,8 @@ wine8 = Drink.create!(name: "Savennières", grape: "Chenin Blanc", description: 
 wine9 = Drink.create!(name: "Saint-Joseph", grape: "Syrah", description: "Belle amplitude, longeur moyenne, assez souple", origin: "Côtes-du-Rhone", strength: "12,5%-14%", color: "Rouge", flavor: "Epice : poivre/fruits noirs/sous-Bois : truffes")
 wine10 = Drink.create!(name: "Condrieu", grape: "Viognier", description: "Vin blanc aromatique, riche, ample, sec", origin: "Côtes-du-Rhone", strength: "12,5%-14%", color: "Blanc", flavor: "Alimentaires : pain d’épice/fruits frais : abricots, pêche, mangue")
 wine11 = Drink.create!(name: "Saint-Amour", grape: "Gamay", description: "Léger, fin et soyeux", origin: "Beaujolais", strength: "11,5%-12,5%", color: "Rouge", flavor: "Bonbon acidulé/Fruits rouges")
-wine12 = Drink.create!(name: "Rosé (pressurage direct)", grape: "Cinsault", description: "Léger, fin et soyeux", strength: "11,5%-12,5%", origin: "Provence", color: "Rosé", flavor: "Notes de fleurs et de melon")
-wine13 = Drink.create!(name: "Rosé (saignée/macération)", grape: "Grolleau", description: "Onctueux, gras et suave", strength: "11,5%-12,5%", origin: "Val-de-Loire", color: "Rosé", flavor: "Arômes de fruits rouges (fraise, framboise, groseille), rose, bonbon anglais, finale toute en fraîcheur")
+wine12 = Drink.create!(name: "Rosé de Provence", grape: "Cinsault", description: "Léger, fin et soyeux", strength: "11,5%-12,5%", origin: "Provence", color: "Rosé", flavor: "Notes de fleurs et de melon")
+wine13 = Drink.create!(name: "Rosé d'Anjou", grape: "Grolleau", description: "Onctueux, gras et suave", strength: "11,5%-12,5%", origin: "Val-de-Loire", color: "Rosé", flavor: "Arômes de fruits rouges (fraise, framboise, groseille), rose, bonbon anglais, finale toute en fraîcheur")
 
 
 # photo WINES
@@ -157,10 +157,10 @@ file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701371206/v
 wine11.photo.attach(io: file, filename: "Saint-Amour", content_type: "image/jpg")
 wine11.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701852341/Vin_rose_pressurage_direct_atxcsi.png")
-wine12.photo.attach(io: file, filename: "Rosé pressurage direct", content_type: "image/jpg")
+wine12.photo.attach(io: file, filename: "Rosé de Provence", content_type: "image/jpg")
 wine12.save
 file = URI.open("https://res.cloudinary.com/dbpig7djd/image/upload/v1701852351/Vin_rose_saignee_maceration_sizxz1.jpg")
-wine13.photo.attach(io: file, filename: "Rosé saignée macération", content_type: "image/jpg")
+wine13.photo.attach(io: file, filename: "Rosé d'Anjou", content_type: "image/jpg")
 wine13.save
 
 # CATEGORIES
@@ -517,4 +517,3 @@ match208= Match.create!(food_id: cheese13.id, drink_id: wine13.id)
 match209= Match.create!(food_id: cheese14.id, drink_id: wine13.id)
 match210= Match.create!(food_id: cheese15.id, drink_id: wine13.id)
 match211= Match.create!(food_id: cheese16.id, drink_id: wine13.id)
-
