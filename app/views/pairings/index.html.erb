@@ -16,7 +16,7 @@
               <path d="M2.9165 13.3248C2.9165 20.4167 8.779 24.1953 13.0694 27.5786C14.5832 28.7715 16.0415 29.8959 17.4998 29.8959C18.9582 29.8959 20.4165 28.773 21.9303 27.5771C26.2221 24.1967 32.0832 20.4167 32.0832 13.3263C32.0832 6.23442 24.0623 1.20463 17.4998 8.02379C10.9373 1.20317 2.9165 6.23296 2.9165 13.3248Z" fill="#EA4335"/>
             </svg>
           </div>
-            <%= link_to pairing.drink.name, drink_path(pairing.drink), class: "name-drink-pairing name-pairing" %>
+            <%= link_to pairing.drink.color, drink_path(pairing.drink), class: "name-drink-pairing name-pairing" %>
             <%= link_to pairing.food.name, food_path(pairing.food), class: "name-food-pairing name-pairing" %>
 
           <%= cl_image_tag pairing.drink.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid" %>
@@ -31,7 +31,7 @@
           <path d="M26.7437 24.0151L20.103 30.6558C19.644 31.1147 18.9019 31.1147 18.4478 30.6558L17.3442 29.5522C16.8853 29.0933 16.8853 28.3511 17.3442 27.897L22.0513 23.1899L17.3442 18.4829C16.8853 18.0239 16.8853 17.2817 17.3442 16.8276L18.4478 15.7241C18.9067 15.2651 19.6489 15.2651 20.103 15.7241L26.7437 22.3647C27.2026 22.814 27.2026 23.5562 26.7437 24.0151Z" fill="#EA4335"/>
           </svg>
         </div>
-          <%= link_to pairing.drink.name, drink_path(pairing.drink), class: "name-drink-pairing name-pairing" %>
+          <%= link_to pairing.drink.color, drink_path(pairing.drink), class: "name-drink-pairing name-pairing" %>
           <%= link_to pairing.food.name, food_path(pairing.food), class: "name-food-pairing name-pairing" %>
         <%= cl_image_tag pairing.drink.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid" %>
         <%= cl_image_tag pairing.food.photo.key, height: 200, width: 300, crop: :fill, class: "img-fluid" %>
