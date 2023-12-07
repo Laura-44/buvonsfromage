@@ -22,9 +22,18 @@
 .dropdown-item {
   color: white;
 }
-
 .navbar-brand {
+  text-decoration: none;
+  margin: 0;
+}
+.navbar-brand-text {
   color: white;
+  font-family: "Poller One";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
 }
 
 .nav-item:has(.nav-link) .bg-menu {

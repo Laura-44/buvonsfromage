@@ -8,7 +8,9 @@
         </svg>
       </div>
       <% end %>
-      <a class="navbar-brand" href="#">buvonsFromage</a>
+      <%= link_to foods_path, class:"navbar-brand" do %>
+        <p class="navbar-brand-text">buvonsFromage</p>
+      <% end %>
       <div class="nav-item dropdown">
         <button class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-action="click->navbar#background">
           <i class="fa-solid fa-bars text-white bars"></i>

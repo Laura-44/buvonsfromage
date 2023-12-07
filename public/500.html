@@ -1,66 +1,152 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>Petit problème technique... Désolé</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+body {
+  margin:0;
+}
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  letter-spacing: 2px;
+  font-size:48px;
+}
+p {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+  font-size:14px;
+  color: #333333;
+}
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+.header {
+  position:relative;
+  text-align:center;
+  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+  color:white;
+}
+.logo {
+  width:50px;
+  fill:white;
+  padding-right:15px;
+  display:inline-block;
+  vertical-align: middle;
+}
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+.inner-header {
+  /* height:65vh;
+  width:100%;
+  margin: 0;
+  padding: 0; */
+  height: 65dvh;
+  width: 100%;
+  padding: 12px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.flex { /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+}
+
+.content {
+  position:relative;
+  height:20vh;
+  text-align:center;
+  background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
   }
+  100% {
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  h1 {
+    font-size:24px;
+  }
+}
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
+<body>
+  <div class="header">
+
+    <!--Content before waves-->
+    <div class="inner-header flex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="62" viewBox="0 0 58 82" fill="none">
+        <path d="M57.0215 29.1649L49.1329 2.10125C48.9561 1.49491 48.5899 0.962608 48.089 0.583881C47.5881 0.205154 46.9793 0.000327005 46.3536 0H11.6464C11.0207 0.000327005 10.412 0.205154 9.91101 0.583881C9.41007 0.962608 9.04386 1.49491 8.86711 2.10125L0.978458 29.1649C-0.25923 33.3131 -0.324004 37.7282 0.791448 41.9116C1.9069 46.095 4.15813 49.8799 7.29082 52.8387C12.444 57.7208 19.0652 60.7219 26.1011 61.3646V76.1429H14.5055C13.7366 76.1429 12.9993 76.4514 12.4556 77.0006C11.912 77.5498 11.6066 78.2947 11.6066 79.0714C11.6066 79.8481 11.912 80.593 12.4556 81.1422C12.9993 81.6915 13.7366 82 14.5055 82H43.4945C44.2634 82 45.0007 81.6915 45.5444 81.1422C46.088 80.593 46.3934 79.8481 46.3934 79.0714C46.3934 78.2947 46.088 77.5498 45.5444 77.0006C45.0007 76.4514 44.2634 76.1429 43.4945 76.1429H31.8989V61.3646C38.9347 60.7213 45.5557 57.7203 50.7092 52.8387C53.8419 49.8799 56.0931 46.095 57.2086 41.9116C58.324 37.7282 58.2592 33.3131 57.0215 29.1649ZM13.8134 5.85714H44.1866L51.4665 30.8196C51.4991 30.9294 51.5281 31.0392 51.5571 31.149C43.7953 33.9604 35.0551 30.5633 30.3118 28.1363C21.1838 23.4688 13.9366 22.8758 8.59171 23.769L13.8134 5.85714ZM46.7558 48.5594C41.9421 53.1128 35.5945 55.6464 29 55.6464C22.4055 55.6464 16.0579 53.1128 11.2442 48.5594C8.90001 46.3401 7.21666 43.5029 6.38426 40.3682C5.55186 37.2335 5.60354 33.9262 6.53349 30.8196L6.69655 30.2631C11.0449 28.7769 17.9552 28.3815 27.6882 33.3638C31.7286 35.4321 38.2548 38.0678 45.2375 38.0678C47.5713 38.0793 49.8951 37.7589 52.1405 37.116C51.8447 41.4817 49.9203 45.5714 46.7558 48.5594Z" fill="white"/>
+      </svg>
+      <h1>Page 500</h1>
+      <h2>buvonsFromage revient...</h2>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+
+    <!--Waves Container-->
+    <div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+    </g>
+    </svg>
+    </div>
+    </div>
 </body>
 </html>
