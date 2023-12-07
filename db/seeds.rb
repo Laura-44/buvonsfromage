@@ -108,7 +108,7 @@ puts "wine"
 # wine1 = Drink.create!(name: "Light", description: "Bière très rafraîchissante et désaltérante. Peu d'arômes, flaveurs courtes et faiblement sucrées.", strength: 4, fermentation: "Lager", color: "Blonde", flavor: "Maltée, céréale")
 wine1 = Drink.create!(name: "Pauillac", grape: "Cabernet Sauvignon", description: "Massif et puissant", strength: "11,5%-12,5%", origin: "Bordeaux", color: "Rouge", flavor: "Poivrons, cassis, mûre")
 wine2 = Drink.create!(name: "Sauternes", grape: "Sauvignon", description: "Ample, gras, onctueux et puissant", strength: "12,5%-14%", origin: "Bordeaux", color: "Blanc", flavor: "Bois (végétal)/poire, poivron vert")
-wine3 = Drink.create!(name: "Pommard", grape: "Pinot Noir", description: "Structure tendre, caractère charnu, richesse et puissance", strength: "12,5%-14%", origin: "Bourgogne", color: "Vin rouge concentré (jeune)", flavor: "Odeurs animales : cuir/fruits rouges/sous-bois")
+wine3 = Drink.create!(name: "Pommard", grape: "Pinot Noir", description: "Structure tendre, caractère charnu, richesse et puissance", strength: "12,5%-14%", origin: "Bourgogne", color: "Rouge", flavor: "Odeurs animales : cuir/fruits rouges/sous-bois")
 wine4 = Drink.create!(name: "Sancerre", grape: "Chardonnay", description: "Sec aromatique, svelte, nerveux", strength: "12,5%-14%", origin: "Bourgogne", color: "Blanc", flavor: "Alimentaires : beurre frais & miel/minérales : pierre à fusil/fruits secs et confits : noisette")
 wine5 = Drink.create!(name: "Riesling", grape: "Riesling", description: "Gras, ample et minéral", strength: "12,5%-14%", origin: "Alsace", color: "Blanc", flavor: "Acacia, citron, fleurs blanches")
 wine6 = Drink.create!(name: "Chinon", grape: "Cabernet Franc", description: "Corpulent, fondu et velouté", origin: "Val-de-Loire", strength: "12,5%-14%", color: "Rouge", flavor: "Poivrons & fruits rouges")
@@ -518,16 +518,3 @@ match209= Match.create!(food_id: cheese14.id, drink_id: wine13.id)
 match210= Match.create!(food_id: cheese15.id, drink_id: wine13.id)
 match211= Match.create!(food_id: cheese16.id, drink_id: wine13.id)
 
-
-
-# PAIRINGS
-puts "pairings"
-
-# pairing1 = Pairing.create!(food_id: cheese3.id, drink_id: beer3.id, user_id: user1.id)
-# pairing2 = Pairing.create!(food_id: cheese4.id, drink_id: beer4.id, user_id: user2.id)
-
-# USER-CATEGORIES
-# puts "user-categories"
-
-# CATEGORIE-DRINKS
-# puts "categorie-drinks"
