@@ -25,18 +25,60 @@
               </span>
             </button>
 
-            <div class="dropdown-menu option-container">
+            <div class="option-container">
               <div class="option-wrapper">
-                <%= link_to 'Blanche', user_categories_path(category: "Bière", name: "Blanche"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id: "blanche", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Blanche')}" %>
-                <%= link_to 'Blonde', user_categories_path(category: "Bière", name: "Blonde"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id:"blonde", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Blonde')}" %>
-                <%= link_to 'Ambrée', user_categories_path(category: "Bière", name: "Ambrée"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "ambrée", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Ambrée')}" %>
-                <%= link_to 'Brune', user_categories_path(category: "Bière", name: "Brune"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "brune", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Brune')}" %>
-                <%= link_to 'Noire', user_categories_path(category: "Bière", name: "Noire"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "noire", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Noire')}" %>
-                <%= link_to 'Fruits', user_categories_path(category: "Bière", name: "Fruits"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "fruits", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Fruits')}" %>
+                <%= link_to user_categories_path(category: "Bière", name: "Blanche"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id: "blanche", class: "beer-box activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Blanche')}" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="24" viewBox="0 0 50 24" fill="none">
+                    <path d="M31.4285 3L29.4285 21H20.4285L18.4285 3H31.4285Z" stroke="#E6D289" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19.4285 7.67C20.0285 7.3 20.6485 7 21.4285 7C23.4285 7 24.4285 9 26.4285 9C28.0685 9 29.0285 7.66 30.4285 7.17" stroke="#E6D289" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M30.4285 8L29.4285 21H20.4285L19.4285 8H30.4285Z" fill="#E6D289" fill-opacity="0.3"/>
+                  </svg>
+                  <p>Blanche</p>
+                <% end %>
+                <%= link_to user_categories_path(category: "Bière", name: "Blonde"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor" }, id:"blonde", class: "beer-box activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Blonde')}" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="24" viewBox="0 0 50 24" fill="none">
+                    <path d="M31.4285 3L29.4285 21H20.4285L18.4285 3H31.4285Z" stroke="#DCB93D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19.4285 7.67C20.0285 7.3 20.6485 7 21.4285 7C23.4285 7 24.4285 9 26.4285 9C28.0685 9 29.0285 7.66 30.4285 7.17" stroke="#DCB93D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M30.4285 8L29.4285 21H20.4285L19.4285 8H30.4285Z" fill="#DCB93D" fill-opacity="0.3"/>
+                  </svg>
+                  <p>Blonde</p>
+                <% end %>
+                <%= link_to user_categories_path(category: "Bière", name: "Ambrée"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "ambrée", class: "beer-box activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Ambrée')}" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="24" viewBox="0 0 50 24" fill="none">
+                    <path d="M31.4285 3L29.4285 21H20.4285L18.4285 3H31.4285Z" stroke="#CB7C33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19.4285 7.67C20.0285 7.3 20.6485 7 21.4285 7C23.4285 7 24.4285 9 26.4285 9C28.0685 9 29.0285 7.66 30.4285 7.17" stroke="#CB7C33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M30.4285 8L29.4285 21H20.4285L19.4285 8H30.4285Z" fill="#CB7C33" fill-opacity="0.3"/>
+                  </svg>
+                  <p>Ambrée</p>
+                <% end %>
+                <%= link_to user_categories_path(category: "Bière", name: "Brune"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "brune", class: "beer-box activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Brune')}" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="24" viewBox="0 0 50 24" fill="none">
+                    <path d="M31.4285 3L29.4285 21H20.4285L18.4285 3H31.4285Z" stroke="#875322" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19.4285 7.67C20.0285 7.3 20.6485 7 21.4285 7C23.4285 7 24.4285 9 26.4285 9C28.0685 9 29.0285 7.66 30.4285 7.17" stroke="#875322" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M30.4285 8L29.4285 21H20.4285L19.4285 8H30.4285Z" fill="#875322" fill-opacity="0.3"/>
+                  </svg>
+                  <p>Brune</p>
+                <% end %>
+                <%= link_to user_categories_path(category: "Bière", name: "Noire"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "noire", class: "beer-box activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Noire')}" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="24" viewBox="0 0 50 24" fill="none">
+                    <path d="M31.4285 3L29.4285 21H20.4285L18.4285 3H31.4285Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19.4285 7.67C20.0285 7.3 20.6485 7 21.4285 7C23.4285 7 24.4285 9 26.4285 9C28.0685 9 29.0285 7.66 30.4285 7.17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M30.4285 8L29.4285 21H20.4285L19.4285 8H30.4285Z" fill="#000000" fill-opacity="0.3"/>
+                  </svg>
+                  <p>Noire</p>
+                <% end %>
+                <%= link_to user_categories_path(category: "Bière", name: "Fruits"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "fruits", class: "beer-box activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Fruits')}" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="24" viewBox="0 0 50 24" fill="none">
+                    <path d="M31.4285 3L29.4285 21H20.4285L18.4285 3H31.4285Z" stroke="#AA2727" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19.4285 7.67C20.0285 7.3 20.6485 7 21.4285 7C23.4285 7 24.4285 9 26.4285 9C28.0685 9 29.0285 7.66 30.4285 7.17" stroke="#AA2727" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M30.4285 8L29.4285 21H20.4285L19.4285 8H30.4285Z" fill="#AA2727" fill-opacity="0.3"/>
+                  </svg>
+                  <p>Fruits</p>
+                <% end %>
               </div>
             </div>
           </div>
-        </div>
+      </div>
 
 
 
@@ -51,21 +93,36 @@
                 </span>
             </button>
 
-            <div class="dropdown-menu option-container">
+            <div class="option-container">
               <div class="option-wrapper">
-                <%= link_to 'Blanc', user_categories_path(category: "Vin", name: "Blanc"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "blanc", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Blanc')}"  %>
-                <%= link_to 'Rosé', user_categories_path(category: "Vin", name: "Rosé"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "rosé", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Rosé')}"  %>
-                <%= link_to 'Rouge', user_categories_path(category: "Vin", name: "Rouge"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "rouge", class: "activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Rouge')}"  %>
+                <%= link_to user_categories_path(category: "Vin", name: "Blanc"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "blanc", class: "wine-box activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Blanc')}" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <path opacity="0.2" d="M21.3847 18.1055C19.6528 19.7259 17.3697 20.6274 14.998 20.6274C12.6262 20.6274 10.3431 19.7259 8.61124 18.1055C7.73015 17.2734 7.09732 16.2131 6.78324 15.0427C6.46916 13.8722 6.48616 12.6375 6.83233 11.4762L7.01632 10.8539C8.49522 10.2199 11.1566 9.77344 15.0003 11.7188C19.2026 13.8469 21.9929 13.1121 23.3698 12.4031C23.5224 13.4432 23.4216 14.5048 23.076 15.4975C22.7303 16.4903 22.1501 17.385 21.3847 18.1055Z" fill="#E6D289"/>
+                    <path d="M24.0622 11.2113L21.5111 2.54766C21.4539 2.35355 21.3355 2.18315 21.1735 2.06191C21.0115 1.94067 20.8146 1.8751 20.6122 1.875L9.38801 1.875C9.18567 1.8751 8.98879 1.94067 8.82678 2.06191C8.66478 2.18315 8.54635 2.35355 8.48919 2.54766L5.93801 11.2113C5.53775 12.5392 5.5168 13.9526 5.87753 15.2918C6.23827 16.631 6.96631 17.8426 7.97942 18.7898C9.64604 20.3525 11.7873 21.3132 14.0626 21.5191V26.25H10.3126C10.064 26.25 9.82553 26.3488 9.64971 26.5246C9.4739 26.7004 9.37512 26.9389 9.37512 27.1875C9.37512 27.4361 9.4739 27.6746 9.64971 27.8504C9.82553 28.0262 10.064 28.125 10.3126 28.125H19.6876C19.9363 28.125 20.1747 28.0262 20.3505 27.8504C20.5264 27.6746 20.6251 27.4361 20.6251 27.1875C20.6251 26.9389 20.5264 26.7004 20.3505 26.5246C20.1747 26.3488 19.9363 26.25 19.6876 26.25H15.9376V21.5191C18.213 21.3134 20.3543 20.3527 22.0208 18.7898C23.0337 17.8425 23.7616 16.6309 24.1223 15.2917C24.483 13.9526 24.4622 12.5393 24.0622 11.2113ZM10.0888 3.75L19.9115 3.75L22.2657 11.741C22.2763 11.7762 22.2857 11.8113 22.295 11.8465C19.7849 12.7465 16.9583 11.659 15.4243 10.882C12.4724 9.38789 10.1286 9.19805 8.40012 9.48398L10.0888 3.75ZM20.7423 17.4199C19.1856 18.8776 17.1328 19.6886 15.0001 19.6886C12.8675 19.6886 10.8147 18.8776 9.25794 17.4199C8.49983 16.7095 7.95544 15.8012 7.68624 14.7978C7.41704 13.7943 7.43376 12.7355 7.7345 11.741L7.78723 11.5629C9.19348 11.0871 11.4282 10.9605 14.5759 12.5555C15.8825 13.2176 17.9931 14.0613 20.2513 14.0613C21.006 14.065 21.7576 13.9624 22.4837 13.7566C22.3881 15.1542 21.7657 16.4634 20.7423 17.4199Z" fill="#E6D289"/>
+                  </svg>
+                  <p>Blanc</p>
+                <% end %>
+                <%= link_to user_categories_path(category: "Vin", name: "Rosé"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "rosé", class: "wine-box activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Rosé')}" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <path opacity="0.2" d="M21.3847 18.1055C19.6528 19.7259 17.3697 20.6274 14.998 20.6274C12.6262 20.6274 10.3431 19.7259 8.61124 18.1055C7.73015 17.2734 7.09732 16.2131 6.78324 15.0427C6.46916 13.8722 6.48616 12.6375 6.83233 11.4762L7.01632 10.8539C8.49522 10.2199 11.1566 9.77344 15.0003 11.7188C19.2026 13.8469 21.9929 13.1121 23.3698 12.4031C23.5224 13.4432 23.4216 14.5048 23.076 15.4975C22.7303 16.4903 22.1501 17.385 21.3847 18.1055Z" fill="303030"/>
+                    <path d="M24.0622 11.2113L21.5111 2.54766C21.4539 2.35355 21.3355 2.18315 21.1735 2.06191C21.0115 1.94067 20.8146 1.8751 20.6122 1.875L9.38801 1.875C9.18567 1.8751 8.98879 1.94067 8.82678 2.06191C8.66478 2.18315 8.54635 2.35355 8.48919 2.54766L5.93801 11.2113C5.53775 12.5392 5.5168 13.9526 5.87753 15.2918C6.23827 16.631 6.96631 17.8426 7.97942 18.7898C9.64604 20.3525 11.7873 21.3132 14.0626 21.5191V26.25H10.3126C10.064 26.25 9.82553 26.3488 9.64971 26.5246C9.4739 26.7004 9.37512 26.9389 9.37512 27.1875C9.37512 27.4361 9.4739 27.6746 9.64971 27.8504C9.82553 28.0262 10.064 28.125 10.3126 28.125H19.6876C19.9363 28.125 20.1747 28.0262 20.3505 27.8504C20.5264 27.6746 20.6251 27.4361 20.6251 27.1875C20.6251 26.9389 20.5264 26.7004 20.3505 26.5246C20.1747 26.3488 19.9363 26.25 19.6876 26.25H15.9376V21.5191C18.213 21.3134 20.3543 20.3527 22.0208 18.7898C23.0337 17.8425 23.7616 16.6309 24.1223 15.2917C24.483 13.9526 24.4622 12.5393 24.0622 11.2113ZM10.0888 3.75L19.9115 3.75L22.2657 11.741C22.2763 11.7762 22.2857 11.8113 22.295 11.8465C19.7849 12.7465 16.9583 11.659 15.4243 10.882C12.4724 9.38789 10.1286 9.19805 8.40012 9.48398L10.0888 3.75ZM20.7423 17.4199C19.1856 18.8776 17.1328 19.6886 15.0001 19.6886C12.8675 19.6886 10.8147 18.8776 9.25794 17.4199C8.49983 16.7095 7.95544 15.8012 7.68624 14.7978C7.41704 13.7943 7.43376 12.7355 7.7345 11.741L7.78723 11.5629C9.19348 11.0871 11.4282 10.9605 14.5759 12.5555C15.8825 13.2176 17.9931 14.0613 20.2513 14.0613C21.006 14.065 21.7576 13.9624 22.4837 13.7566C22.3881 15.1542 21.7657 16.4634 20.7423 17.4199Z" fill="#E58F73"/>
+                  </svg>
+                  <p>Rosé</p>
+                <% end %>
+                <%= link_to user_categories_path(category: "Vin", name: "Rouge"), data: {turbo_method: :post, controller: "color", action: "click->color#displayColor", color_target: "activeColor"}, id: "rouge", class: "wine-box activeColor #{'active' if current_user.user_categories.pluck(:name).include?('Rouge')}" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <path opacity="0.2" d="M21.3847 18.1055C19.6528 19.7259 17.3697 20.6274 14.998 20.6274C12.6262 20.6274 10.3431 19.7259 8.61124 18.1055C7.73015 17.2734 7.09732 16.2131 6.78324 15.0427C6.46916 13.8722 6.48616 12.6375 6.83233 11.4762L7.01632 10.8539C8.49522 10.2199 11.1566 9.77344 15.0003 11.7188C19.2026 13.8469 21.9929 13.1121 23.3698 12.4031C23.5224 13.4432 23.4216 14.5048 23.076 15.4975C22.7303 16.4903 22.1501 17.385 21.3847 18.1055Z" fill="#FFFFF"/>
+                    <path d="M24.0622 11.2113L21.5111 2.54766C21.4539 2.35355 21.3355 2.18315 21.1735 2.06191C21.0115 1.94067 20.8146 1.8751 20.6122 1.875L9.38801 1.875C9.18567 1.8751 8.98879 1.94067 8.82678 2.06191C8.66478 2.18315 8.54635 2.35355 8.48919 2.54766L5.93801 11.2113C5.53775 12.5392 5.5168 13.9526 5.87753 15.2918C6.23827 16.631 6.96631 17.8426 7.97942 18.7898C9.64604 20.3525 11.7873 21.3132 14.0626 21.5191V26.25H10.3126C10.064 26.25 9.82553 26.3488 9.64971 26.5246C9.4739 26.7004 9.37512 26.9389 9.37512 27.1875C9.37512 27.4361 9.4739 27.6746 9.64971 27.8504C9.82553 28.0262 10.064 28.125 10.3126 28.125H19.6876C19.9363 28.125 20.1747 28.0262 20.3505 27.8504C20.5264 27.6746 20.6251 27.4361 20.6251 27.1875C20.6251 26.9389 20.5264 26.7004 20.3505 26.5246C20.1747 26.3488 19.9363 26.25 19.6876 26.25H15.9376V21.5191C18.213 21.3134 20.3543 20.3527 22.0208 18.7898C23.0337 17.8425 23.7616 16.6309 24.1223 15.2917C24.483 13.9526 24.4622 12.5393 24.0622 11.2113ZM10.0888 3.75L19.9115 3.75L22.2657 11.741C22.2763 11.7762 22.2857 11.8113 22.295 11.8465C19.7849 12.7465 16.9583 11.659 15.4243 10.882C12.4724 9.38789 10.1286 9.19805 8.40012 9.48398L10.0888 3.75ZM20.7423 17.4199C19.1856 18.8776 17.1328 19.6886 15.0001 19.6886C12.8675 19.6886 10.8147 18.8776 9.25794 17.4199C8.49983 16.7095 7.95544 15.8012 7.68624 14.7978C7.41704 13.7943 7.43376 12.7355 7.7345 11.741L7.78723 11.5629C9.19348 11.0871 11.4282 10.9605 14.5759 12.5555C15.8825 13.2176 17.9931 14.0613 20.2513 14.0613C21.006 14.065 21.7576 13.9624 22.4837 13.7566C22.3881 15.1542 21.7657 16.4634 20.7423 17.4199Z" fill="#AA2727"/>
+                  </svg>
+                <p>Rouge</p>
+                <% end %>
               </div>
             </div>
+
           </div>
         </div>
-      </div>
-
-      <div class="button">
-        <%# <%= submit_tag 'VALIDER', class: 'search-btn'%>
-        <%= link_to 'VALIDER', foods_path, class: 'search-btn'%>
-      </div>
     </div>
-  </div>
+        <%= link_to 'VALIDER', foods_path, class: 'search-btn'%>
+    </div>
+    </div>
 </div>
