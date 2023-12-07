@@ -67,6 +67,7 @@
     align-items: center;
     border-radius: 15px;
     height: 150px;
+    position: relative;
 
     .matchs_fleche {
       position: absolute;
@@ -86,6 +87,36 @@
       object-fit: cover;
     }
   }
+
+  .name-pairing {
+    position: absolute;
+    background: $orange-bf;
+    color:  white;
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    line-height: normal;
+    border-radius: 5px;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: fit-content;
+  }
+
+  .name-food-pairing {
+    top: 16px;
+    right: 16px;
+    max-width: calc(100px - 16px);
+  }
+
+  .name-drink-pairing {
+    bottom: 16px;
+    left: 16px;
+    max-width: calc(100px - 16px);
+  }
+
 
   .red-line {
     border: 5px solid $red;
